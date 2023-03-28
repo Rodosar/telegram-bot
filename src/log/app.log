@@ -1,0 +1,16 @@
+2023-03-28 12:35:48,156 INFO com.example.telegrambot.TelegramBotApplication [main] Starting TelegramBotApplication using Java 15.0.1 on WIN-D9SD1HSNER2 with PID 4860 (E:\JavaProjects\telegram-bot\telegram-bot\target\classes started by Руслан in E:\JavaProjects\telegram-bot\telegram-bot)
+2023-03-28 12:35:48,171 DEBUG com.example.telegrambot.TelegramBotApplication [main] Running with Spring Boot v2.7.1, Spring v5.3.21
+2023-03-28 12:35:48,171 INFO com.example.telegrambot.TelegramBotApplication [main] No active profile set, falling back to 1 default profile: "default"
+2023-03-28 12:35:48,772 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-03-28 12:35:48,826 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Finished Spring Data repository scanning in 46 ms. Found 2 JPA repository interfaces.
+2023-03-28 12:35:49,242 INFO org.hibernate.jpa.internal.util.LogHelper [main] HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-03-28 12:35:49,296 INFO org.hibernate.Version [main] HHH000412: Hibernate ORM core version 5.6.9.Final
+2023-03-28 12:35:49,468 INFO org.hibernate.annotations.common.Version [main] HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2023-03-28 12:35:49,617 INFO com.zaxxer.hikari.HikariDataSource [main] HikariPool-1 - Starting...
+2023-03-28 12:35:49,851 INFO com.zaxxer.hikari.HikariDataSource [main] HikariPool-1 - Start completed.
+2023-03-28 12:35:49,858 INFO org.hibernate.dialect.Dialect [main] HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL10Dialect
+2023-03-28 12:35:50,575 INFO org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator [main] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-03-28 12:35:50,591 INFO org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean [main] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-03-28 12:35:51,340 ERROR com.example.telegrambot.service.TelegramBot [main] Error setting bots command list: Error sending commands: [400] Bad Request: BOT_COMMAND_INVALID
+2023-03-28 12:35:51,798 INFO com.example.telegrambot.TelegramBotApplication [main] Started TelegramBotApplication in 4.004 seconds (JVM running for 4.754)
+2023-03-28 12:36:31,440 INFO com.example.telegrambot.service.TelegramBot [AutoShow Telegram Executor] Replied to user Руслан
