@@ -1,6 +1,7 @@
-package com.example.telegrambot.service;
+package com.example.telegrambot.bot;
 
 import com.example.telegrambot.config.BotConfig;
+import com.example.telegrambot.methods.AdsMethods;
 import com.example.telegrambot.model.Ads;
 import com.example.telegrambot.model.AdsRepository;
 import com.example.telegrambot.model.User;
@@ -9,7 +10,6 @@ import com.vdurmont.emoji.EmojiParser;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.PropertySource;
-import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Component;
 import org.telegram.telegrambots.bots.TelegramLongPollingBot;
 import org.telegram.telegrambots.meta.api.methods.commands.SetMyCommands;
@@ -43,6 +43,9 @@ public class TelegramBot extends TelegramLongPollingBot{
     @Autowired
     private AdsRepository adsRepository;
 
+    @Autowired
+    private AdsMethods adsMethods;
+
     final BotConfig config;
 
     final static String HELP_TEXT = "Этот бот предназначен для поиска автомобильных выставок, просмотра информации по этим выставкам и другой полезной информации";
@@ -53,12 +56,15 @@ public class TelegramBot extends TelegramLongPollingBot{
 
     final static String NO_BUTTON = "NO_BUTTON";
 
+    private Long chatId;
 
     public TelegramBot(BotConfig config){
         this.config=config;
+
         List<BotCommand> listOfCommands = new ArrayList<>();
         listOfCommands.add(new BotCommand("/start)", "Запуск бота"));
         listOfCommands.add(new BotCommand("/help)", "Инструкция по взаимодействию с ботом"));
+
         try {
             this.execute(new SetMyCommands(listOfCommands, new BotCommandScopeDefault(), null));
         }
@@ -86,18 +92,29 @@ public class TelegramBot extends TelegramLongPollingBot{
             String name = update.getMessage().getChat().getFirstName();
 
             if (messageText.contains("/send") && chatId == config.getAdminId()){   //отправка сообщения всем пользователям
-                var textToSend = EmojiParser.parseToUnicode(messageText.substring(messageText.indexOf(" ")));
-                var users = userRepository.findAll();
-                for (User user: users){
-                    prepareAndSendMessage(user.getChatId(), textToSend);
-                }
+                sendAds(messageText);
+
             }
-            // TODO: доделать
-            else if(messageText.contains("/addads") && chatId == config.getAdminId()){  //отправка в БД
-                var textToSend = EmojiParser.parseToUnicode(messageText.substring(messageText.indexOf(" ")));
-                Ads ads = new Ads();
-                ads.setAd(textToSend);
-                adsRepository.save(ads);
+            else if(messageText.contains("/addads") && chatId == config.getAdminId()){  //отправка в БД //ДОДЕЛАТЬ!?
+                String text = adsMethods.addAds(messageText);
+                sendMessage(chatId, text);
+
+            }
+            else if(messageText.contains("/editads") && chatId == config.getAdminId()){
+                String text = adsMethods.editAds(messageText);
+                sendMessage(chatId, text);
+            }
+            else if(messageText.contains("/deleteads") && chatId == config.getAdminId()){
+
+            }
+            else if(messageText.contains("/addshow") && chatId == config.getAdminId()){
+
+            }
+            else if(messageText.contains("/editshow") && chatId == config.getAdminId()){
+
+            }
+            else if(messageText.contains("/deleteshow") && chatId == config.getAdminId()){
+
             }
             else {
                 switch (messageText){
@@ -119,7 +136,7 @@ public class TelegramBot extends TelegramLongPollingBot{
                 }
             }
         }
-        // TODO: НУЖНО ПЕРЕНЕСТИ И ПЕРЕДЕЛАТЬ
+        // TODO: НУЖНО ПЕРЕНЕСТИ И ПЕРЕДЕЛАТЬ, ПРИМЕР СОЗДАНИЯ КНОПОК У СООБЩЕНИЯ
         else if (update.hasCallbackQuery()){
             String callBackData = update.getCallbackQuery().getData();
             long messageId = update.getCallbackQuery().getMessage().getMessageId();
@@ -136,6 +153,16 @@ public class TelegramBot extends TelegramLongPollingBot{
 
         }
     }
+
+    private void sendAds(String messageText){
+        var textToSend = EmojiParser.parseToUnicode(messageText.substring(messageText.indexOf(" ")));
+        var users = userRepository.findAll();
+        for (User user: users){
+            prepareAndSendMessage(user.getChatId(), textToSend);
+        }
+    }
+
+
     private void executeEditMessageText(long chatId, long messageId, String text){     //редактирование текста сообщения с его заменой
         EditMessageText message = new EditMessageText();
         message.setChatId(String.valueOf(chatId));
@@ -176,6 +203,12 @@ public class TelegramBot extends TelegramLongPollingBot{
         executeMessage(message);
     }
 
+    private void startCommandReceived(Long chatId, String name){          //действия при нажатии /start
+        String textToSend = "Hi " + name + "!";
+        log.info("Replied to user " + name);
+        sendMessage(chatId,textToSend);
+    }
+
     private void registerUser(Message msg){                     //регистрация пользователя
         if(userRepository.findById(msg.getChatId()).isEmpty()){
 
@@ -195,23 +228,6 @@ public class TelegramBot extends TelegramLongPollingBot{
         }
     }
 
-    /*private void addAds(Message msg){
-        adsRepository.save(ad)
-    }*/
-
-    private void executeMessage (SendMessage message){
-        try {
-            execute(message);
-        } catch (TelegramApiException e) {
-            log.error("Error execute message: " + e.getMessage());
-        }
-    }
-    private void startCommandReceived(Long chatId, String name){          //действия при нажатии /start
-        String answer = "Hi " + name + "!";
-        log.info("Replied to user " + name);
-        sendMessage(chatId,answer);
-    }
-
     private void sendMessage(long chatId, String textToSend){
         SendMessage message = new SendMessage();
         message.setChatId(String.valueOf(chatId));
@@ -220,10 +236,24 @@ public class TelegramBot extends TelegramLongPollingBot{
         ReplyKeyboardMarkup replyKeyboardMarkup = new ReplyKeyboardMarkup();
         List<KeyboardRow> keyboardRows = new ArrayList<>();
 
+
         KeyboardRow row = new KeyboardRow();
-        row.add("Какие сейчас проводятся автомобильные выставки?");
-        row.add("Расскажи какой-нибудь факт!");
-        keyboardRows.add(row);
+        if(chatId == config.getAdminId()){
+            KeyboardRow row2 = new KeyboardRow();
+            row.add("Добавить автовыставку");
+            row.add("Редактировать автовыставку");
+            row.add("Отправить сообщение пользователям");
+            row2.add("Какие сейчас проводятся автомобильные выставки?");
+            row2.add("Расскажи какой-нибудь факт!");
+
+            keyboardRows.add(row);
+            keyboardRows.add(row2);
+        }
+        else {
+            row.add("Какие сейчас проводятся автомобильные выставки?");
+            row.add("Расскажи какой-нибудь факт!");
+            keyboardRows.add(row);
+        }
 
         replyKeyboardMarkup.setKeyboard(keyboardRows);
         message.setReplyMarkup(replyKeyboardMarkup);
@@ -250,6 +280,14 @@ public class TelegramBot extends TelegramLongPollingBot{
         message.setChatId(String.valueOf(chatId));
         message.setText(textToSend);
         executeMessage(message);
+    }
+
+    private void executeMessage (SendMessage message){
+        try {
+            execute(message);
+        } catch (TelegramApiException e) {
+            log.error("Error execute message: " + e.getMessage());
+        }
     }
 
     /*@Scheduled(cron = "0 * * * * *")
