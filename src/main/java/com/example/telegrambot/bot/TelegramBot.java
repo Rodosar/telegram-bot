@@ -1,14 +1,17 @@
 package com.example.telegrambot.bot;
 
+import com.example.telegrambot.command.CommandContainer;
 import com.example.telegrambot.config.BotConfig;
 import com.example.telegrambot.methods.AdsMethods;
 import com.example.telegrambot.model.Ads;
 import com.example.telegrambot.model.AdsRepository;
 import com.example.telegrambot.model.User;
 import com.example.telegrambot.model.UserRepository;
+import com.example.telegrambot.service.SendBotMessageServiceImpl;
 import com.vdurmont.emoji.EmojiParser;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Lazy;
 import org.springframework.context.annotation.PropertySource;
 import org.springframework.stereotype.Component;
 import org.telegram.telegrambots.bots.TelegramLongPollingBot;
@@ -45,6 +48,23 @@ public class TelegramBot extends TelegramLongPollingBot{
 
     @Autowired
     private AdsMethods adsMethods;
+
+
+
+
+
+
+
+    @Autowired
+    private CommandContainer commandContainer;
+
+    @Lazy
+    @Autowired
+    private SendBotMessageServiceImpl sendBotMessageService;
+
+
+
+
 
     final BotConfig config;
 
@@ -91,6 +111,19 @@ public class TelegramBot extends TelegramLongPollingBot{
             long chatId = update.getMessage().getChatId();
             String name = update.getMessage().getChat().getFirstName();
 
+
+
+            if(messageText.startsWith("/")){
+                String commandIdentifier = messageText.split(" ")[0].toLowerCase();
+                commandContainer.fillMap(sendBotMessageService, userRepository);
+                commandContainer.findCommand(commandIdentifier).execute(update);
+            }
+
+
+
+
+
+
             if (messageText.contains("/send") && chatId == config.getAdminId()){   //отправка сообщения всем пользователям
                 sendAds(messageText);
 
@@ -119,7 +152,7 @@ public class TelegramBot extends TelegramLongPollingBot{
             else {
                 switch (messageText){
 
-                    case "/start":
+                    case "/start1":
                         registerUser(update.getMessage());
                         startCommandReceived(chatId, name);
                         break;

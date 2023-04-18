@@ -21,5 +21,7 @@ public class BotConfig {
     @Value("${bot.admin}")
     Long adminId;
 
+    @Value("${bot.adminUserName}")
+    String adminUserName;
 
 }
