@@ -3,10 +3,7 @@ package com.example.telegrambot.bot;
 import com.example.telegrambot.command.CommandContainer;
 import com.example.telegrambot.config.BotConfig;
 import com.example.telegrambot.methods.AdsMethods;
-import com.example.telegrambot.model.Ads;
-import com.example.telegrambot.model.AdsRepository;
-import com.example.telegrambot.model.User;
-import com.example.telegrambot.model.UserRepository;
+import com.example.telegrambot.model.*;
 import com.example.telegrambot.service.SendBotMessageServiceImpl;
 import com.vdurmont.emoji.EmojiParser;
 import lombok.extern.slf4j.Slf4j;
@@ -47,13 +44,10 @@ public class TelegramBot extends TelegramLongPollingBot{
     private AdsRepository adsRepository;
 
     @Autowired
+    private AutoShowsRepository autoShowsRepository;
+
+    @Autowired
     private AdsMethods adsMethods;
-
-
-
-
-
-
 
     @Autowired
     private CommandContainer commandContainer;
@@ -61,10 +55,6 @@ public class TelegramBot extends TelegramLongPollingBot{
     @Lazy
     @Autowired
     private SendBotMessageServiceImpl sendBotMessageService;
-
-
-
-
 
     final BotConfig config;
 
@@ -112,19 +102,15 @@ public class TelegramBot extends TelegramLongPollingBot{
             String name = update.getMessage().getChat().getFirstName();
 
 
-
             if(messageText.startsWith("/")){
                 String commandIdentifier = messageText.split(" ")[0].toLowerCase();
-                commandContainer.fillMap(sendBotMessageService, userRepository);
+                commandContainer.fillMap(sendBotMessageService, userRepository, autoShowsRepository);
                 commandContainer.findCommand(commandIdentifier).execute(update);
             }
 
 
 
-
-
-
-            if (messageText.contains("/send") && chatId == config.getAdminId()){   //отправка сообщения всем пользователям
+            if (messageText.contains("/send1") && chatId == config.getAdminId()){   //отправка сообщения всем пользователям
                 sendAds(messageText);
 
             }
@@ -157,7 +143,7 @@ public class TelegramBot extends TelegramLongPollingBot{
                         startCommandReceived(chatId, name);
                         break;
 
-                    case "/help":
+                    case "/help1":
                         sendPhoto(chatId,PHOTO);
                         break;
 

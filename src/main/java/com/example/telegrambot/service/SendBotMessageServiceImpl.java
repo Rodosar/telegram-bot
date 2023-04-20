@@ -1,14 +1,18 @@
 package com.example.telegrambot.service;
 
 import com.example.telegrambot.bot.TelegramBot;
+import com.vdurmont.emoji.EmojiParser;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.telegram.telegrambots.meta.api.methods.send.SendMessage;
+import org.telegram.telegrambots.meta.api.methods.send.SendPhoto;
+import org.telegram.telegrambots.meta.api.objects.InputFile;
 import org.telegram.telegrambots.meta.api.objects.replykeyboard.ReplyKeyboardMarkup;
 import org.telegram.telegrambots.meta.api.objects.replykeyboard.buttons.KeyboardRow;
 import org.telegram.telegrambots.meta.exceptions.TelegramApiException;
 
+import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -20,7 +24,11 @@ public class SendBotMessageServiceImpl implements SendBotMessageService{
     private IsAdmin isAdmin;
 
     @Autowired
-    TelegramBot telegramBot;
+    private TelegramBot telegramBot;
+
+    final static String PHOTO = "src/main/resources/images/help.jpg";
+
+    final static String HELP_TEXT = "Этот бот предназначен для поиска автомобильных выставок, просмотра информации по этим выставкам и другой полезной информации";
 
     @Override
     public void prepareAndSendMessage(long chatId, String textToSend) {
@@ -68,6 +76,36 @@ public class SendBotMessageServiceImpl implements SendBotMessageService{
             telegramBot.execute(message);
         } catch (TelegramApiException e) {
             log.error("Error execute message: " + e.getMessage());
+        }
+    }
+
+    @Override
+    public void sendPhoto(long chatId) {
+
+        SendPhoto sendPhoto = new SendPhoto();
+        sendPhoto.setChatId(String.valueOf(chatId));
+        sendPhoto.setPhoto(new InputFile(new File(PHOTO)));
+
+        try {
+            telegramBot.execute(sendPhoto);
+        } catch (TelegramApiException e) {
+            log.error("Error execute message: " + e.getMessage());
+        }
+    }
+
+    @Override
+    public void sendPhotoWithText(long chatId, String text) {
+
+        SendPhoto sendPhoto = new SendPhoto();
+        sendPhoto.setChatId(String.valueOf(chatId));
+        sendPhoto.setPhoto(new InputFile(new File(PHOTO)));
+        String textToSend = EmojiParser.parseToUnicode(text);
+        sendPhoto.setCaption(textToSend);
+
+        try {
+            telegramBot.execute(sendPhoto);
+        } catch (TelegramApiException e) {
+            log.error("Error send photo: " + e.getMessage());
         }
     }
 }

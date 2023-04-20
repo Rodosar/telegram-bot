@@ -5,4 +5,8 @@ public interface SendBotMessageService {
     void prepareAndSendMessage(long chatId, String textToSend);
 
     void sendMessageWithKeyboard(long chatId, String chatUserName, String message);
+
+    void sendPhoto(long chatId);
+
+    void sendPhotoWithText(long chatId, String text);
 }

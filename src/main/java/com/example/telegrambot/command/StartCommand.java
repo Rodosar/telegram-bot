@@ -15,9 +15,9 @@ import org.telegram.telegrambots.meta.api.objects.Update;
 import java.sql.Timestamp;
 
 
-@EnableJpaRepositories
+//@EnableJpaRepositories
 @Slf4j
-public class StartAndRegistration implements Command {
+public class StartCommand implements Command {
 
 
     private UserRepository userRepository;
@@ -25,7 +25,7 @@ public class StartAndRegistration implements Command {
     private SendBotMessageService sendBotMessageService;
 
 
-    public StartAndRegistration(SendBotMessageService sendBotMessageService, UserRepository userRepository) {
+    public StartCommand(SendBotMessageService sendBotMessageService, UserRepository userRepository) {
         this.sendBotMessageService = sendBotMessageService;
         this.userRepository = userRepository;
     }
