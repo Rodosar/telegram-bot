@@ -1,5 +1,6 @@
-package com.example.telegrambot.command;
+package com.example.telegrambot.command.AutoShow;
 
+import com.example.telegrambot.command.Command;
 import com.example.telegrambot.model.AutoShows;
 import com.example.telegrambot.model.AutoShowsRepository;
 import com.example.telegrambot.service.SendBotMessageService;
@@ -12,11 +13,11 @@ import java.time.LocalDateTime;
 import java.util.Date;
 
 
-public class AddShowCommand implements Command{
-
-    private AutoShowsRepository autoShowsRepository;
+public class AddShowCommand implements Command {
 
     private SendBotMessageService sendBotMessageService;
+
+    private AutoShowsRepository autoShowsRepository;
 
     private AutoShows autoShows;
 
@@ -31,8 +32,8 @@ public class AddShowCommand implements Command{
 
         long chatId = update.getMessage().getChatId();
 
-        String commandRegExSpace = "^\\/[a-z]+\\s*";
-        String textFromMessage = (update.getMessage().getText()).replaceAll(commandRegExSpace, "");
+        String commandRegexWithSpace = "^\\/[a-z]+\\s*";
+        String textFromMessage = (update.getMessage().getText()).replaceAll(commandRegexWithSpace, "");
 
         String[] splitMessage = textFromMessage.split("\n");
 

@@ -8,7 +8,10 @@ import org.springframework.stereotype.Component;
 import org.telegram.telegrambots.meta.api.methods.send.SendMessage;
 import org.telegram.telegrambots.meta.api.methods.send.SendPhoto;
 import org.telegram.telegrambots.meta.api.objects.InputFile;
+import org.telegram.telegrambots.meta.api.objects.Message;
+import org.telegram.telegrambots.meta.api.objects.replykeyboard.InlineKeyboardMarkup;
 import org.telegram.telegrambots.meta.api.objects.replykeyboard.ReplyKeyboardMarkup;
+import org.telegram.telegrambots.meta.api.objects.replykeyboard.buttons.InlineKeyboardButton;
 import org.telegram.telegrambots.meta.api.objects.replykeyboard.buttons.KeyboardRow;
 import org.telegram.telegrambots.meta.exceptions.TelegramApiException;
 
@@ -104,6 +107,40 @@ public class SendBotMessageServiceImpl implements SendBotMessageService{
 
         try {
             telegramBot.execute(sendPhoto);
+        } catch (TelegramApiException e) {
+            log.error("Error send photo: " + e.getMessage());
+        }
+    }
+
+    @Override
+    public void callBackSendMessage(long chatId, String text) {
+
+        SendMessage sendMessage = new SendMessage();
+        sendMessage.setText(text);
+        sendMessage.setChatId(String.valueOf(chatId));
+
+        InlineKeyboardMarkup inlineKeyboardMarkup = new InlineKeyboardMarkup();
+        List<List<InlineKeyboardButton>> rowsInLine = new ArrayList<>();
+        List<InlineKeyboardButton> rowInLine = new ArrayList<>();
+
+        InlineKeyboardButton editShow = new InlineKeyboardButton();
+        editShow.setText("Отправить уведомление");
+        editShow.setCallbackData("/send");
+
+        InlineKeyboardButton addShow = new InlineKeyboardButton();
+        addShow.setText("Добавить автовыставку");
+        addShow.setCallbackData("addshow");
+
+        rowInLine.add(editShow);
+        rowInLine.add(addShow);
+
+        rowsInLine.add(rowInLine);
+
+        inlineKeyboardMarkup.setKeyboard(rowsInLine);
+        sendMessage.setReplyMarkup(inlineKeyboardMarkup);
+
+        try {
+            telegramBot.execute(sendMessage);
         } catch (TelegramApiException e) {
             log.error("Error send photo: " + e.getMessage());
         }

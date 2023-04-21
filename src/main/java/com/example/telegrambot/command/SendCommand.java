@@ -22,6 +22,9 @@ public class SendCommand implements Command{
     @Override
     public void execute(Update update) {
 
+        long chatId = update.getMessage().getChatId();
+
+
         String textFromMessage = EmojiParser.parseToUnicode(update.getMessage().getText());
         String commandRegExSpace = "^\\/[a-z]+\\s";
         String textToSend = textFromMessage.replaceAll(commandRegExSpace, "");

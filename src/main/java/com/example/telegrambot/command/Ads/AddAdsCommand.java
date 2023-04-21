@@ -1,4 +1,4 @@
-package com.example.telegrambot.command;
+package com.example.telegrambot.command.Ads;
 
 import com.example.telegrambot.model.AdsRepository;
 import com.example.telegrambot.service.SendBotMessageService;

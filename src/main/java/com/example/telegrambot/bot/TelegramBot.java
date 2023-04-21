@@ -13,9 +13,11 @@ import org.springframework.context.annotation.PropertySource;
 import org.springframework.stereotype.Component;
 import org.telegram.telegrambots.bots.TelegramLongPollingBot;
 import org.telegram.telegrambots.meta.api.methods.commands.SetMyCommands;
+import org.telegram.telegrambots.meta.api.methods.send.SendChatAction;
 import org.telegram.telegrambots.meta.api.methods.send.SendMessage;
 import org.telegram.telegrambots.meta.api.methods.send.SendPhoto;
 import org.telegram.telegrambots.meta.api.methods.updatingmessages.EditMessageText;
+import org.telegram.telegrambots.meta.api.objects.CallbackQuery;
 import org.telegram.telegrambots.meta.api.objects.InputFile;
 import org.telegram.telegrambots.meta.api.objects.Message;
 import org.telegram.telegrambots.meta.api.objects.Update;
@@ -30,6 +32,7 @@ import org.telegram.telegrambots.meta.exceptions.TelegramApiException;
 import java.io.File;
 import java.sql.Timestamp;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 
 @Slf4j
@@ -96,90 +99,35 @@ public class TelegramBot extends TelegramLongPollingBot{
     @Override
     public void onUpdateReceived(Update update) {
 
+        commandContainer.fillMap(sendBotMessageService, userRepository, autoShowsRepository);
+
+
+        if(update.hasCallbackQuery()){
+            CallbackQuery callbackQuery = update.getCallbackQuery();
+            String callBackCommand = callbackQuery.getData();
+            long callBackChatId = callbackQuery.getMessage().getChatId();
+
+            if(callBackCommand.equals("addshow")){
+                sendBotMessageService.prepareAndSendMessage(callBackChatId, "Добавьте выставку!");
+            }
+
+        }
+
         if(update.hasMessage() && update.getMessage().hasText()){
             String messageText = update.getMessage().getText();
-            long chatId = update.getMessage().getChatId();
             String name = update.getMessage().getChat().getFirstName();
 
 
             if(messageText.startsWith("/")){
                 String commandIdentifier = messageText.split(" ")[0].toLowerCase();
-                commandContainer.fillMap(sendBotMessageService, userRepository, autoShowsRepository);
+                //commandContainer.fillMap(sendBotMessageService, userRepository, autoShowsRepository);
                 commandContainer.findCommand(commandIdentifier).execute(update);
             }
 
-
-
-            if (messageText.contains("/send1") && chatId == config.getAdminId()){   //отправка сообщения всем пользователям
-                sendAds(messageText);
-
-            }
-            else if(messageText.contains("/addads") && chatId == config.getAdminId()){  //отправка в БД //ДОДЕЛАТЬ!?
-                String text = adsMethods.addAds(messageText);
-                sendMessage(chatId, text);
-
-            }
-            else if(messageText.contains("/editads") && chatId == config.getAdminId()){
-                String text = adsMethods.editAds(messageText);
-                sendMessage(chatId, text);
-            }
-            else if(messageText.contains("/deleteads") && chatId == config.getAdminId()){
-
-            }
-            else if(messageText.contains("/addshow") && chatId == config.getAdminId()){
-
-            }
-            else if(messageText.contains("/editshow") && chatId == config.getAdminId()){
-
-            }
-            else if(messageText.contains("/deleteshow") && chatId == config.getAdminId()){
-
-            }
-            else {
-                switch (messageText){
-
-                    case "/start1":
-                        registerUser(update.getMessage());
-                        startCommandReceived(chatId, name);
-                        break;
-
-                    case "/help1":
-                        sendPhoto(chatId,PHOTO);
-                        break;
-
-                    case "/test":
-                        test(chatId);
-                        break;
-
-                    default: prepareAndSendMessage(chatId, "Sorry command was not recognized");
-                }
-            }
         }
-        // TODO: НУЖНО ПЕРЕНЕСТИ И ПЕРЕДЕЛАТЬ, ПРИМЕР СОЗДАНИЯ КНОПОК У СООБЩЕНИЯ
-        else if (update.hasCallbackQuery()){
-            String callBackData = update.getCallbackQuery().getData();
-            long messageId = update.getCallbackQuery().getMessage().getMessageId();
-            long chatId = update.getCallbackQuery().getMessage().getChatId();
 
-            if(callBackData.equals(YES_BUTTON)){
-                String text = "Вы нажали кнопку Да";
-                executeEditMessageText(chatId, messageId, text);
-            }
-            else if(callBackData.equals(NO_BUTTON)){
-                String text = "Вы нажали кнопку Нет";
-                executeEditMessageText(chatId, messageId, text);
-            }
-
-        }
     }
 
-    private void sendAds(String messageText){
-        var textToSend = EmojiParser.parseToUnicode(messageText.substring(messageText.indexOf(" ")));
-        var users = userRepository.findAll();
-        for (User user: users){
-            prepareAndSendMessage(user.getChatId(), textToSend);
-        }
-    }
 
 
     private void executeEditMessageText(long chatId, long messageId, String text){     //редактирование текста сообщения с его заменой
@@ -219,95 +167,9 @@ public class TelegramBot extends TelegramLongPollingBot{
         inlineKeyboardMarkup.setKeyboard(rowsInLine);
         message.setReplyMarkup(inlineKeyboardMarkup);
 
-        executeMessage(message);
+        //executeMessage(message);
     }
 
-    private void startCommandReceived(Long chatId, String name){          //действия при нажатии /start
-        String textToSend = "Hi " + name + "!";
-        log.info("Replied to user " + name);
-        sendMessage(chatId,textToSend);
-    }
-
-    private void registerUser(Message msg){                     //регистрация пользователя
-        if(userRepository.findById(msg.getChatId()).isEmpty()){
-
-            var chatId = msg.getChatId();
-            var chat = msg.getChat();
-
-            User user = new User();
-
-            user.setChatId(chatId);
-            user.setFirstName(chat.getFirstName());
-            user.setLastName(chat.getLastName());
-            user.setUserName(chat.getUserName());
-            user.setRegisteredAt(new Timestamp(System.currentTimeMillis()));
-
-            userRepository.save(user);
-            log.info("User saved: " + user);
-        }
-    }
-
-    private void sendMessage(long chatId, String textToSend){
-        SendMessage message = new SendMessage();
-        message.setChatId(String.valueOf(chatId));
-        message.setText(textToSend);
-
-        ReplyKeyboardMarkup replyKeyboardMarkup = new ReplyKeyboardMarkup();
-        List<KeyboardRow> keyboardRows = new ArrayList<>();
-
-
-        KeyboardRow row = new KeyboardRow();
-        if(chatId == config.getAdminId()){
-            KeyboardRow row2 = new KeyboardRow();
-            row.add("Добавить автовыставку");
-            row.add("Редактировать автовыставку");
-            row.add("Отправить сообщение пользователям");
-            row2.add("Какие сейчас проводятся автомобильные выставки?");
-            row2.add("Расскажи какой-нибудь факт!");
-
-            keyboardRows.add(row);
-            keyboardRows.add(row2);
-        }
-        else {
-            row.add("Какие сейчас проводятся автомобильные выставки?");
-            row.add("Расскажи какой-нибудь факт!");
-            keyboardRows.add(row);
-        }
-
-        replyKeyboardMarkup.setKeyboard(keyboardRows);
-        message.setReplyMarkup(replyKeyboardMarkup);
-        executeMessage(message);
-    }
-
-    private void sendPhoto(long chatId, String photo){
-
-        SendPhoto sendPhoto = new SendPhoto();
-        sendPhoto.setChatId(String.valueOf(chatId));
-        sendPhoto.setPhoto(new InputFile(new File(photo)));
-        String emoji = EmojiParser.parseToUnicode(HELP_TEXT + ":blush:");  //добавление эмоджи
-        sendPhoto.setCaption(emoji);
-
-        try {
-            execute(sendPhoto);
-        } catch (TelegramApiException e) {
-            log.error("Error send photo: " + e.getMessage());
-        }
-    }
-
-    private void prepareAndSendMessage(long chatId, String textToSend){
-        SendMessage message = new SendMessage();
-        message.setChatId(String.valueOf(chatId));
-        message.setText(textToSend);
-        executeMessage(message);
-    }
-
-    private void executeMessage (SendMessage message){
-        try {
-            execute(message);
-        } catch (TelegramApiException e) {
-            log.error("Error execute message: " + e.getMessage());
-        }
-    }
 
     /*@Scheduled(cron = "0 * * * * *")
     private void sendAds(){

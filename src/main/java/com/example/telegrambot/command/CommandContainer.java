@@ -1,5 +1,6 @@
 package com.example.telegrambot.command;
 
+import com.example.telegrambot.command.AutoShow.AddShowCommand;
 import com.example.telegrambot.model.AutoShowsRepository;
 import com.example.telegrambot.model.UserRepository;
 import com.example.telegrambot.service.SendBotMessageService;
@@ -39,6 +40,21 @@ public class CommandContainer {
     public Command findCommand(String commandIdentifier) {
 
         Command commandOrDefault = commandMap.getOrDefault(commandIdentifier, unknownCommand);
+        /*if (isAdmin.checkAdmin(chatUserName)) {
+            if (admins.contains(username)) {
+                return orDefault;
+            } else {
+                return unknownCommand;
+            }
+        }*/
+        return commandOrDefault;
+    }
+
+    public Command findCalBackCommand(String callBackCommand) {
+
+        boolean isCallBack = false;
+
+        Command commandOrDefault = commandMap.getOrDefault(callBackCommand, unknownCommand);
         /*if (isAdmin.checkAdmin(chatUserName)) {
             if (admins.contains(username)) {
                 return orDefault;
