@@ -14,4 +14,6 @@ public interface SendBotMessageService {
     void sendPhotoWithText(long chatId, String text);
 
     void callBackSendMessage(long chatId, String text);
+
+    void messageToCallBack(long callBackChatId, String callBackCommand);
 }

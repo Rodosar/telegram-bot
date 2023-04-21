@@ -1,6 +1,7 @@
 package com.example.telegrambot.service;
 
 import com.example.telegrambot.bot.TelegramBot;
+import com.example.telegrambot.command.CommandContainer;
 import com.vdurmont.emoji.EmojiParser;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -28,6 +29,9 @@ public class SendBotMessageServiceImpl implements SendBotMessageService{
 
     @Autowired
     private TelegramBot telegramBot;
+
+    @Autowired
+    private CommandContainer commandContainer;
 
     final static String PHOTO = "src/main/resources/images/help.jpg";
 
@@ -129,7 +133,7 @@ public class SendBotMessageServiceImpl implements SendBotMessageService{
 
         InlineKeyboardButton addShow = new InlineKeyboardButton();
         addShow.setText("Добавить автовыставку");
-        addShow.setCallbackData("addshow");
+        addShow.setCallbackData("/addshow");
 
         rowInLine.add(editShow);
         rowInLine.add(addShow);
@@ -144,5 +148,36 @@ public class SendBotMessageServiceImpl implements SendBotMessageService{
         } catch (TelegramApiException e) {
             log.error("Error send photo: " + e.getMessage());
         }
+    }
+
+    @Override
+    public void messageToCallBack(long callBackChatId, String callBackCommand) {
+
+        String textToSend = null;
+
+        switch (callBackCommand){
+
+            case ("/addshow"):
+                textToSend = "Добавьте выставку!";
+                break;
+
+            case ("/send"):
+                textToSend = "Введите уведомление для всех пользователей!";
+                break;
+
+            default:
+                break;
+        }
+
+        SendMessage sendMessage = new SendMessage();
+        sendMessage.setText(textToSend);
+        sendMessage.setChatId(String.valueOf(callBackChatId));
+
+        try {
+            telegramBot.execute(sendMessage);
+        } catch (TelegramApiException e) {
+            log.error("Error send photo: " + e.getMessage());
+        }
+
     }
 }

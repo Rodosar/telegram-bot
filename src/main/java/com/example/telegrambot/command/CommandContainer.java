@@ -3,7 +3,9 @@ package com.example.telegrambot.command;
 import com.example.telegrambot.command.AutoShow.AddShowCommand;
 import com.example.telegrambot.model.AutoShowsRepository;
 import com.example.telegrambot.model.UserRepository;
+import com.example.telegrambot.service.IsAdmin;
 import com.example.telegrambot.service.SendBotMessageService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import java.util.HashMap;
@@ -17,8 +19,11 @@ public class CommandContainer {
 
     private Command unknownCommand;
 
+    @Autowired
+    private IsAdmin isAdmin;
 
-    private HashMap<String, Command> commandMap = new HashMap();
+    private HashMap<String, Command> adminCommandMap = new HashMap();
+    private HashMap<String, Command> userCommandMap = new HashMap();
 
 
     /*public CommandContainer(SendBotMessageService sendBotMessageService, UserRepository userRepository) {
@@ -29,39 +34,40 @@ public class CommandContainer {
 
     public void fillMap(SendBotMessageService sendBotMessageService, UserRepository userRepository, AutoShowsRepository autoShowsRepository){
 
-        commandMap.put(START.getCommandName(),new StartCommand(sendBotMessageService, userRepository));
-        commandMap.put(HELP.getCommandName(), new HelpCommand(sendBotMessageService));
-        commandMap.put(SEND.getCommandName(), new SendCommand(sendBotMessageService, userRepository));
-        commandMap.put(ADDSHOW.getCommandName(), new AddShowCommand(sendBotMessageService,autoShowsRepository));
+        adminCommandMap.put(START.getCommandName(),new StartCommand(sendBotMessageService, userRepository));
+        adminCommandMap.put(HELP.getCommandName(), new HelpCommand(sendBotMessageService));
+        adminCommandMap.put(SEND.getCommandName(), new SendCommand(sendBotMessageService, userRepository));
+        adminCommandMap.put(ADDSHOW.getCommandName(), new AddShowCommand(sendBotMessageService,autoShowsRepository));
 
         unknownCommand = new UnknownCommand(sendBotMessageService);
+
+        //callBackCommandMap.put(ADDSHOW.getCommandName(),new AddShowCallBackCommand());
     }
 
-    public Command findCommand(String commandIdentifier) {
+    public Command findCommand(String chatUserName, String commandIdentifier) {
 
-        Command commandOrDefault = commandMap.getOrDefault(commandIdentifier, unknownCommand);
-        /*if (isAdmin.checkAdmin(chatUserName)) {
-            if (admins.contains(username)) {
-                return orDefault;
-            } else {
-                return unknownCommand;
-            }
-        }*/
+        Command commandOrDefault;
+
+        if(isAdmin.checkAdmin(chatUserName)){
+            commandOrDefault = adminCommandMap.getOrDefault(commandIdentifier, unknownCommand);
+        } else {
+            commandOrDefault = userCommandMap.getOrDefault(commandIdentifier, unknownCommand);
+        }
+
         return commandOrDefault;
     }
 
-    public Command findCalBackCommand(String callBackCommand) {
 
-        boolean isCallBack = false;
+    public boolean findCalBackCommand(String chatUserName, String callBackCommand) {
 
-        Command commandOrDefault = commandMap.getOrDefault(callBackCommand, unknownCommand);
-        /*if (isAdmin.checkAdmin(chatUserName)) {
-            if (admins.contains(username)) {
-                return orDefault;
-            } else {
-                return unknownCommand;
-            }
-        }*/
-        return commandOrDefault;
+        boolean command = false;
+
+        if(isAdmin.checkAdmin(chatUserName)){
+            command = adminCommandMap.containsKey(callBackCommand);
+        } else {
+            command = userCommandMap.containsKey(callBackCommand);
+        }
+        return command;
     }
+
 }

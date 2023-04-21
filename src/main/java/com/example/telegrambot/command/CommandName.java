@@ -5,7 +5,6 @@ public enum CommandName {
 
     START ("/start"),
     HELP("/help"),
-    NO("nocommand"),
     SEND ("/send"),
     ADDADS("/addads"),
     EDITADS("/editads"),
