@@ -2,6 +2,9 @@ package com.example.telegrambot.service;
 
 import com.example.telegrambot.bot.TelegramBot;
 import com.example.telegrambot.command.CommandContainer;
+import com.example.telegrambot.command.UserCommand.CallBackMoreInfoCommand;
+import com.example.telegrambot.model.AutoShows;
+import com.example.telegrambot.model.AutoShowsRepository;
 import com.vdurmont.emoji.EmojiParser;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -9,7 +12,6 @@ import org.springframework.stereotype.Component;
 import org.telegram.telegrambots.meta.api.methods.send.SendMessage;
 import org.telegram.telegrambots.meta.api.methods.send.SendPhoto;
 import org.telegram.telegrambots.meta.api.objects.InputFile;
-import org.telegram.telegrambots.meta.api.objects.Message;
 import org.telegram.telegrambots.meta.api.objects.replykeyboard.InlineKeyboardMarkup;
 import org.telegram.telegrambots.meta.api.objects.replykeyboard.ReplyKeyboardMarkup;
 import org.telegram.telegrambots.meta.api.objects.replykeyboard.buttons.InlineKeyboardButton;
@@ -18,7 +20,9 @@ import org.telegram.telegrambots.meta.exceptions.TelegramApiException;
 
 import java.io.File;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Optional;
 
 @Component
 @Slf4j
@@ -32,6 +36,8 @@ public class SendBotMessageServiceImpl implements SendBotMessageService{
 
     @Autowired
     private CommandContainer commandContainer;
+
+    private List<String> showDescription;
 
     final static String PHOTO = "src/main/resources/images/help.jpg";
 
@@ -58,9 +64,8 @@ public class SendBotMessageServiceImpl implements SendBotMessageService{
         ReplyKeyboardMarkup replyKeyboardMarkup = new ReplyKeyboardMarkup();
         List<KeyboardRow> keyboardRows = new ArrayList<>();
         KeyboardRow row = new KeyboardRow();
-
+        KeyboardRow row2 = new KeyboardRow();
         if(isAdmin.checkAdmin(chatUserName)){
-            KeyboardRow row2 = new KeyboardRow();
             row.add("Добавить автовыставку");
             row.add("Редактировать автовыставку");
             row.add("Отправить сообщение пользователям");
@@ -73,7 +78,9 @@ public class SendBotMessageServiceImpl implements SendBotMessageService{
         else {
             row.add("Какие сейчас проводятся автомобильные выставки?");
             row.add("Расскажи какой-нибудь факт!");
+            row2.add("Подробная информация про выставку");
             keyboardRows.add(row);
+            keyboardRows.add(row2);
         }
 
         replyKeyboardMarkup.setKeyboard(keyboardRows);
@@ -151,7 +158,52 @@ public class SendBotMessageServiceImpl implements SendBotMessageService{
     }
 
     @Override
-    public void messageToCallBack(long callBackChatId, String callBackCommand) {
+    public void sendCallBackMessageButtonsShow(long chatId, AutoShowsRepository autoShowsRepository, String text) {
+
+        SendMessage sendMessage = new SendMessage();
+        sendMessage.setText(text);
+        sendMessage.setChatId(String.valueOf(chatId));
+
+        InlineKeyboardMarkup inlineKeyboardMarkup = new InlineKeyboardMarkup();
+        List<List<InlineKeyboardButton>> rowsInLine = new ArrayList<>();
+
+        Iterable<AutoShows> autoShows = autoShowsRepository.findAll();
+        for(AutoShows show : autoShows){
+
+            InlineKeyboardButton autoShowButton = new InlineKeyboardButton();
+            autoShowButton.setText(show.getDescription());
+            //autoShowButton.setCallbackData("/" + show.getDescription());
+            autoShowButton.setCallbackData(show.getDescription());
+
+            List<InlineKeyboardButton> rowInLine = new ArrayList<>();
+            rowInLine.add(autoShowButton);
+            rowsInLine.add(rowInLine);
+
+        }
+
+        inlineKeyboardMarkup.setKeyboard(rowsInLine);
+        sendMessage.setReplyMarkup(inlineKeyboardMarkup);
+
+        try {
+            telegramBot.execute(sendMessage);
+        } catch (TelegramApiException e) {
+            log.error("Error send photo: " + e.getMessage());
+        }
+    }
+
+    @Override
+    public void sendCallBackMessageShow(long callBackChatId, String callBackCommand, HashMap<String, Long> showDescription){
+
+        /*if(showDescription.containsKey(callBackCommand)){
+            long showCommandId = showDescription.get(callBackCommand);
+            Optional<AutoShows> autoShow = autoShowsRepository.findById(showCommandId);
+            AutoShows autoShows = autoShow.get();
+            showCommand = new CallBackMoreInfoCommand(sendBotMessageService, autoShowsRepository, autoShows);
+        }*/
+    }
+
+    @Override
+    public void messageToCallBack(long callBackChatId, String callBackCommand, String callBackText) {
 
         String textToSend = null;
 
@@ -178,6 +230,11 @@ public class SendBotMessageServiceImpl implements SendBotMessageService{
         } catch (TelegramApiException e) {
             log.error("Error send photo: " + e.getMessage());
         }
+
+    }
+
+    @Override
+    public void messageAboutShow(long chatId, long showId, String text) {
 
     }
 }

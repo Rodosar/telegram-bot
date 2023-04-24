@@ -1,7 +1,8 @@
 package com.example.telegrambot.service;
 
-import org.telegram.telegrambots.meta.api.methods.send.SendMessage;
-import org.telegram.telegrambots.meta.api.objects.Message;
+import com.example.telegrambot.model.AutoShowsRepository;
+
+import java.util.HashMap;
 
 public interface SendBotMessageService {
 
@@ -15,5 +16,11 @@ public interface SendBotMessageService {
 
     void callBackSendMessage(long chatId, String text);
 
-    void messageToCallBack(long callBackChatId, String callBackCommand);
+    void sendCallBackMessageButtonsShow(long chatId, AutoShowsRepository autoShowsRepository, String text);
+
+    void sendCallBackMessageShow(long callBackChatId, String callBackCommand, HashMap<String, Long> showDescription);
+
+    void messageToCallBack(long callBackChatId, String callBackCommand, String callBackText);
+
+    void messageAboutShow(long chatId, long showId, String text);
 }

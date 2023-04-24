@@ -11,7 +11,11 @@ public enum CommandName {
     DELETEADS("/deleteads"),
     ADDSHOW("/addshow"),
     EDITSHOW("/editshow"),
-    DELETESHOW("/deleteshow");
+    DELETESHOW("/deleteshow"),
+
+    EXHIBITIONSNOW("Какие сейчас проводятся автомобильные выставки?"),
+    FACT("Расскажи какой-нибудь факт!"),
+    MOREINFO("Подробная информация про выставку");
 
 
     private String commandName;

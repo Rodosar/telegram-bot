@@ -32,16 +32,18 @@ public class AutoShows {
 
     Date dateOfTheEvent;
 
-    @Override
-    public String toString() {
-        return "AutoShows{" +
-                "id=" + id +
-                ", description='" + description + '\'' +
-                ", detailedDescription='" + detailedDescription + '\'' +
-                ", autoCompany='" + autoCompany + '\'' +
-                ", mainCars='" + mainCars + '\'' +
-                ", characteristicsOfTheMainCars='" + characteristicsOfTheMainCars + '\'' +
-                ", dateOfTheEvent=" + dateOfTheEvent +
-                '}';
+    public String toStringAllShows() {
+        return  "Описание: " + description + '\n' +
+                "Автокомпании: " + autoCompany + '\n' +
+                "Дата проведения: " + dateOfTheEvent + '\n' + '\n';
+    }
+
+    public String toStringShow() {
+        return  "Описание: " + description + '\n' +
+                "Подробное писание: " + detailedDescription + '\n' +
+                "Автокомпании: " + autoCompany + '\n' +
+                "Главные экспонаты: " + mainCars + '\n' +
+                "Характеристики главных экспонатов: " + characteristicsOfTheMainCars + '\n' +
+                "Дата проведения: " + dateOfTheEvent;
     }
 }

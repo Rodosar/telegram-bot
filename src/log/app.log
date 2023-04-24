@@ -1,173 +1,435 @@
-2023-04-22 02:21:43,375 INFO com.example.telegrambot.TelegramBotApplication [main] Starting TelegramBotApplication using Java 15.0.1 on WIN-D9SD1HSNER2 with PID 6736 (E:\JavaProjects\telegram-bot\telegram-bot\target\classes started by Руслан in E:\JavaProjects\telegram-bot\telegram-bot)
-2023-04-22 02:21:43,375 DEBUG com.example.telegrambot.TelegramBotApplication [main] Running with Spring Boot v2.7.1, Spring v5.3.21
-2023-04-22 02:21:43,375 INFO com.example.telegrambot.TelegramBotApplication [main] No active profile set, falling back to 1 default profile: "default"
-2023-04-22 02:21:44,045 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2023-04-22 02:21:44,123 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Finished Spring Data repository scanning in 58 ms. Found 3 JPA repository interfaces.
-2023-04-22 02:21:44,547 INFO org.hibernate.jpa.internal.util.LogHelper [main] HHH000204: Processing PersistenceUnitInfo [name: default]
-2023-04-22 02:21:44,593 INFO org.hibernate.Version [main] HHH000412: Hibernate ORM core version 5.6.9.Final
-2023-04-22 02:21:44,731 INFO org.hibernate.annotations.common.Version [main] HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
-2023-04-22 02:21:44,882 INFO com.zaxxer.hikari.HikariDataSource [main] HikariPool-1 - Starting...
-2023-04-22 02:21:45,084 INFO com.zaxxer.hikari.HikariDataSource [main] HikariPool-1 - Start completed.
-2023-04-22 02:21:45,096 INFO org.hibernate.dialect.Dialect [main] HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL10Dialect
-2023-04-22 02:21:45,650 INFO org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator [main] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
-2023-04-22 02:21:45,660 INFO org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean [main] Initialized JPA EntityManagerFactory for persistence unit 'default'
-2023-04-22 02:21:46,258 ERROR com.example.telegrambot.bot.TelegramBot [main] Error setting bots command list: Error sending commands: [400] Bad Request: BOT_COMMAND_INVALID
-2023-04-22 02:21:46,681 INFO com.example.telegrambot.TelegramBotApplication [main] Started TelegramBotApplication in 3.633 seconds (JVM running for 4.258)
-2023-04-22 02:22:12,173 INFO com.example.telegrambot.command.StartCommand [AutoShow Telegram Executor] Replied to user Руслан
-2023-04-22 02:22:24,667 ERROR com.example.telegrambot.service.SendBotMessageServiceImpl [AutoShow Telegram Executor] Error execute message: Error sending message: [403] Forbidden: bot was blocked by the user
-2023-04-22 02:24:00,660 INFO com.example.telegrambot.TelegramBotApplication [main] Starting TelegramBotApplication using Java 15.0.1 on WIN-D9SD1HSNER2 with PID 14460 (E:\JavaProjects\telegram-bot\telegram-bot\target\classes started by Руслан in E:\JavaProjects\telegram-bot\telegram-bot)
-2023-04-22 02:24:00,660 DEBUG com.example.telegrambot.TelegramBotApplication [main] Running with Spring Boot v2.7.1, Spring v5.3.21
-2023-04-22 02:24:00,660 INFO com.example.telegrambot.TelegramBotApplication [main] No active profile set, falling back to 1 default profile: "default"
-2023-04-22 02:24:01,315 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2023-04-22 02:24:01,382 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Finished Spring Data repository scanning in 62 ms. Found 3 JPA repository interfaces.
-2023-04-22 02:24:01,832 INFO org.hibernate.jpa.internal.util.LogHelper [main] HHH000204: Processing PersistenceUnitInfo [name: default]
-2023-04-22 02:24:01,879 INFO org.hibernate.Version [main] HHH000412: Hibernate ORM core version 5.6.9.Final
-2023-04-22 02:24:02,033 INFO org.hibernate.annotations.common.Version [main] HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
-2023-04-22 02:24:02,180 INFO com.zaxxer.hikari.HikariDataSource [main] HikariPool-1 - Starting...
-2023-04-22 02:24:02,380 INFO com.zaxxer.hikari.HikariDataSource [main] HikariPool-1 - Start completed.
-2023-04-22 02:24:02,396 INFO org.hibernate.dialect.Dialect [main] HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL10Dialect
-2023-04-22 02:24:02,951 INFO org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator [main] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
-2023-04-22 02:24:02,966 INFO org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean [main] Initialized JPA EntityManagerFactory for persistence unit 'default'
-2023-04-22 02:24:03,518 ERROR com.example.telegrambot.bot.TelegramBot [main] Error setting bots command list: Error sending commands: [400] Bad Request: BOT_COMMAND_INVALID
-2023-04-22 02:24:03,946 INFO com.example.telegrambot.TelegramBotApplication [main] Started TelegramBotApplication in 3.596 seconds (JVM running for 4.164)
-2023-04-22 02:24:39,579 INFO com.example.telegrambot.TelegramBotApplication [main] Starting TelegramBotApplication using Java 15.0.1 on WIN-D9SD1HSNER2 with PID 14824 (E:\JavaProjects\telegram-bot\telegram-bot\target\classes started by Руслан in E:\JavaProjects\telegram-bot\telegram-bot)
-2023-04-22 02:24:39,579 DEBUG com.example.telegrambot.TelegramBotApplication [main] Running with Spring Boot v2.7.1, Spring v5.3.21
-2023-04-22 02:24:39,579 INFO com.example.telegrambot.TelegramBotApplication [main] No active profile set, falling back to 1 default profile: "default"
-2023-04-22 02:24:40,138 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2023-04-22 02:24:40,198 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Finished Spring Data repository scanning in 49 ms. Found 3 JPA repository interfaces.
-2023-04-22 02:24:40,601 INFO org.hibernate.jpa.internal.util.LogHelper [main] HHH000204: Processing PersistenceUnitInfo [name: default]
-2023-04-22 02:24:40,654 INFO org.hibernate.Version [main] HHH000412: Hibernate ORM core version 5.6.9.Final
-2023-04-22 02:24:40,786 INFO org.hibernate.annotations.common.Version [main] HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
-2023-04-22 02:24:40,942 INFO com.zaxxer.hikari.HikariDataSource [main] HikariPool-1 - Starting...
-2023-04-22 02:24:41,147 INFO com.zaxxer.hikari.HikariDataSource [main] HikariPool-1 - Start completed.
-2023-04-22 02:24:41,147 INFO org.hibernate.dialect.Dialect [main] HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL10Dialect
-2023-04-22 02:24:41,695 INFO org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator [main] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
-2023-04-22 02:24:41,702 INFO org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean [main] Initialized JPA EntityManagerFactory for persistence unit 'default'
-2023-04-22 02:24:42,713 INFO com.example.telegrambot.TelegramBotApplication [main] Started TelegramBotApplication in 3.476 seconds (JVM running for 3.97)
-2023-04-22 02:24:43,322 INFO com.example.telegrambot.command.StartCommand [AutoShow Telegram Executor] Replied to user Руслан
-2023-04-22 02:24:47,696 INFO com.example.telegrambot.command.StartCommand [AutoShow Telegram Executor] Replied to user Руслан
-2023-04-22 02:24:55,903 ERROR org.telegram.telegrambots.updatesreceivers.DefaultBotSession [AutoShow Telegram Executor] Index 5 out of bounds for length 1
-java.lang.ArrayIndexOutOfBoundsException: Index 5 out of bounds for length 1
-	at com.example.telegrambot.command.AutoShow.AddShowCommand.execute(AddShowCommand.java:47)
-	at com.example.telegrambot.bot.TelegramBot.onUpdateReceived(TelegramBot.java:123)
+2023-04-25 00:36:15,930 INFO com.example.telegrambot.TelegramBotApplication [main] Starting TelegramBotApplication using Java 15.0.1 on WIN-D9SD1HSNER2 with PID 13744 (E:\JavaProjects\telegram-bot\telegram-bot\target\classes started by Руслан in E:\JavaProjects\telegram-bot\telegram-bot)
+2023-04-25 00:36:15,977 DEBUG com.example.telegrambot.TelegramBotApplication [main] Running with Spring Boot v2.7.1, Spring v5.3.21
+2023-04-25 00:36:15,977 INFO com.example.telegrambot.TelegramBotApplication [main] No active profile set, falling back to 1 default profile: "default"
+2023-04-25 00:36:16,627 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-04-25 00:36:16,695 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Finished Spring Data repository scanning in 58 ms. Found 4 JPA repository interfaces.
+2023-04-25 00:36:17,083 INFO org.hibernate.jpa.internal.util.LogHelper [main] HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-04-25 00:36:17,152 INFO org.hibernate.Version [main] HHH000412: Hibernate ORM core version 5.6.9.Final
+2023-04-25 00:36:17,315 INFO org.hibernate.annotations.common.Version [main] HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2023-04-25 00:36:17,469 INFO com.zaxxer.hikari.HikariDataSource [main] HikariPool-1 - Starting...
+2023-04-25 00:36:17,685 INFO com.zaxxer.hikari.HikariDataSource [main] HikariPool-1 - Start completed.
+2023-04-25 00:36:17,701 INFO org.hibernate.dialect.Dialect [main] HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL10Dialect
+2023-04-25 00:36:18,287 INFO org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator [main] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-04-25 00:36:18,287 INFO org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean [main] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-04-25 00:36:18,587 WARN org.springframework.context.annotation.AnnotationConfigApplicationContext [main] Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'telegramBot' defined in file [E:\JavaProjects\telegram-bot\telegram-bot\target\classes\com\example\telegrambot\bot\TelegramBot.class]: Bean instantiation via constructor failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [com.example.telegrambot.bot.TelegramBot]: Constructor threw exception; nested exception is java.lang.NullPointerException: Cannot invoke "com.example.telegrambot.model.AutoShowsRepository.findAll()" because "this.autoShowsRepository" is null
+2023-04-25 00:36:18,587 INFO org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean [main] Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-04-25 00:36:18,587 INFO com.zaxxer.hikari.HikariDataSource [main] HikariPool-1 - Shutdown initiated...
+2023-04-25 00:36:18,603 INFO com.zaxxer.hikari.HikariDataSource [main] HikariPool-1 - Shutdown completed.
+2023-04-25 00:36:18,603 INFO org.springframework.boot.autoconfigure.logging.ConditionEvaluationReportLoggingListener [main] 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2023-04-25 00:36:18,634 ERROR org.springframework.boot.SpringApplication [main] Application run failed
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'telegramBot' defined in file [E:\JavaProjects\telegram-bot\telegram-bot\target\classes\com\example\telegrambot\bot\TelegramBot.class]: Bean instantiation via constructor failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [com.example.telegrambot.bot.TelegramBot]: Constructor threw exception; nested exception is java.lang.NullPointerException: Cannot invoke "com.example.telegrambot.model.AutoShowsRepository.findAll()" because "this.autoShowsRepository" is null
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:315)
+	at org.springframework.beans.factory.support.ConstructorResolver.autowireConstructor(ConstructorResolver.java:296)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.autowireConstructor(AbstractAutowireCapableBeanFactory.java:1372)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1222)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:582)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:542)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:955)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:918)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:583)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:734)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:408)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:308)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1306)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1295)
+	at com.example.telegrambot.TelegramBotApplication.main(TelegramBotApplication.java:11)
+Caused by: org.springframework.beans.BeanInstantiationException: Failed to instantiate [com.example.telegrambot.bot.TelegramBot]: Constructor threw exception; nested exception is java.lang.NullPointerException: Cannot invoke "com.example.telegrambot.model.AutoShowsRepository.findAll()" because "this.autoShowsRepository" is null
+	at org.springframework.beans.BeanUtils.instantiateClass(BeanUtils.java:224)
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:117)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:311)
+	... 18 common frames omitted
+Caused by: java.lang.NullPointerException: Cannot invoke "com.example.telegrambot.model.AutoShowsRepository.findAll()" because "this.autoShowsRepository" is null
+	at com.example.telegrambot.bot.TelegramBot.<init>(TelegramBot.java:54)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:64)
+	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:500)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:481)
+	at org.springframework.beans.BeanUtils.instantiateClass(BeanUtils.java:211)
+	... 20 common frames omitted
+2023-04-25 00:38:20,017 INFO com.example.telegrambot.TelegramBotApplication [main] Starting TelegramBotApplication using Java 15.0.1 on WIN-D9SD1HSNER2 with PID 11964 (E:\JavaProjects\telegram-bot\telegram-bot\target\classes started by Руслан in E:\JavaProjects\telegram-bot\telegram-bot)
+2023-04-25 00:38:20,017 DEBUG com.example.telegrambot.TelegramBotApplication [main] Running with Spring Boot v2.7.1, Spring v5.3.21
+2023-04-25 00:38:20,017 INFO com.example.telegrambot.TelegramBotApplication [main] No active profile set, falling back to 1 default profile: "default"
+2023-04-25 00:38:20,599 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-04-25 00:38:20,660 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Finished Spring Data repository scanning in 51 ms. Found 4 JPA repository interfaces.
+2023-04-25 00:38:21,042 INFO org.hibernate.jpa.internal.util.LogHelper [main] HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-04-25 00:38:21,100 INFO org.hibernate.Version [main] HHH000412: Hibernate ORM core version 5.6.9.Final
+2023-04-25 00:38:21,243 INFO org.hibernate.annotations.common.Version [main] HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2023-04-25 00:38:21,394 INFO com.zaxxer.hikari.HikariDataSource [main] HikariPool-1 - Starting...
+2023-04-25 00:38:21,589 INFO com.zaxxer.hikari.HikariDataSource [main] HikariPool-1 - Start completed.
+2023-04-25 00:38:21,605 INFO org.hibernate.dialect.Dialect [main] HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL10Dialect
+2023-04-25 00:38:22,106 INFO org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator [main] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-04-25 00:38:22,106 INFO org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean [main] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-04-25 00:38:23,300 INFO com.example.telegrambot.TelegramBotApplication [main] Started TelegramBotApplication in 3.614 seconds (JVM running for 4.137)
+2023-04-25 00:38:32,492 INFO com.example.telegrambot.command.StartCommand [AutoShow Telegram Executor] Replied to user Руслан
+2023-04-25 00:39:33,263 INFO com.example.telegrambot.TelegramBotApplication [main] Starting TelegramBotApplication using Java 15.0.1 on WIN-D9SD1HSNER2 with PID 1764 (E:\JavaProjects\telegram-bot\telegram-bot\target\classes started by Руслан in E:\JavaProjects\telegram-bot\telegram-bot)
+2023-04-25 00:39:33,263 DEBUG com.example.telegrambot.TelegramBotApplication [main] Running with Spring Boot v2.7.1, Spring v5.3.21
+2023-04-25 00:39:33,263 INFO com.example.telegrambot.TelegramBotApplication [main] No active profile set, falling back to 1 default profile: "default"
+2023-04-25 00:39:33,764 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-04-25 00:39:33,833 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Finished Spring Data repository scanning in 54 ms. Found 4 JPA repository interfaces.
+2023-04-25 00:39:34,297 INFO org.hibernate.jpa.internal.util.LogHelper [main] HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-04-25 00:39:34,350 INFO org.hibernate.Version [main] HHH000412: Hibernate ORM core version 5.6.9.Final
+2023-04-25 00:39:34,513 INFO org.hibernate.annotations.common.Version [main] HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2023-04-25 00:39:34,698 INFO com.zaxxer.hikari.HikariDataSource [main] HikariPool-1 - Starting...
+2023-04-25 00:39:34,909 INFO com.zaxxer.hikari.HikariDataSource [main] HikariPool-1 - Start completed.
+2023-04-25 00:39:34,924 INFO org.hibernate.dialect.Dialect [main] HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL10Dialect
+2023-04-25 00:39:35,579 INFO org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator [main] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-04-25 00:39:35,595 INFO org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean [main] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-04-25 00:39:37,004 INFO com.example.telegrambot.TelegramBotApplication [main] Started TelegramBotApplication in 4.068 seconds (JVM running for 5.577)
+2023-04-25 00:40:41,884 WARN com.zaxxer.hikari.pool.HikariPool [HikariPool-1 housekeeper] HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=1m6s863ms761µs100ns).
+2023-04-25 00:40:41,915 INFO org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean [SpringApplicationShutdownHook] Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-04-25 00:40:41,915 INFO com.zaxxer.hikari.HikariDataSource [SpringApplicationShutdownHook] HikariPool-1 - Shutdown initiated...
+2023-04-25 00:40:41,915 INFO com.zaxxer.hikari.HikariDataSource [SpringApplicationShutdownHook] HikariPool-1 - Shutdown completed.
+2023-04-25 00:40:46,107 INFO com.example.telegrambot.TelegramBotApplication [main] Starting TelegramBotApplication using Java 15.0.1 on WIN-D9SD1HSNER2 with PID 11152 (E:\JavaProjects\telegram-bot\telegram-bot\target\classes started by Руслан in E:\JavaProjects\telegram-bot\telegram-bot)
+2023-04-25 00:40:46,107 DEBUG com.example.telegrambot.TelegramBotApplication [main] Running with Spring Boot v2.7.1, Spring v5.3.21
+2023-04-25 00:40:46,107 INFO com.example.telegrambot.TelegramBotApplication [main] No active profile set, falling back to 1 default profile: "default"
+2023-04-25 00:40:46,873 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-04-25 00:40:46,994 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Finished Spring Data repository scanning in 98 ms. Found 4 JPA repository interfaces.
+2023-04-25 00:40:47,859 INFO org.hibernate.jpa.internal.util.LogHelper [main] HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-04-25 00:40:47,938 INFO org.hibernate.Version [main] HHH000412: Hibernate ORM core version 5.6.9.Final
+2023-04-25 00:40:48,181 INFO org.hibernate.annotations.common.Version [main] HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2023-04-25 00:40:48,211 INFO com.example.telegrambot.TelegramBotApplication [main] Starting TelegramBotApplication using Java 15.0.1 on WIN-D9SD1HSNER2 with PID 11612 (E:\JavaProjects\telegram-bot\telegram-bot\target\classes started by Руслан in E:\JavaProjects\telegram-bot\telegram-bot)
+2023-04-25 00:40:48,211 DEBUG com.example.telegrambot.TelegramBotApplication [main] Running with Spring Boot v2.7.1, Spring v5.3.21
+2023-04-25 00:40:48,211 INFO com.example.telegrambot.TelegramBotApplication [main] No active profile set, falling back to 1 default profile: "default"
+2023-04-25 00:40:48,450 INFO com.zaxxer.hikari.HikariDataSource [main] HikariPool-1 - Starting...
+2023-04-25 00:40:48,874 INFO com.zaxxer.hikari.HikariDataSource [main] HikariPool-1 - Start completed.
+2023-04-25 00:40:48,914 INFO org.hibernate.dialect.Dialect [main] HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL10Dialect
+2023-04-25 00:40:49,277 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-04-25 00:40:49,387 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Finished Spring Data repository scanning in 93 ms. Found 4 JPA repository interfaces.
+2023-04-25 00:40:50,061 INFO org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator [main] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-04-25 00:40:50,071 INFO org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean [main] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-04-25 00:40:50,102 INFO org.hibernate.jpa.internal.util.LogHelper [main] HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-04-25 00:40:50,172 INFO org.hibernate.Version [main] HHH000412: Hibernate ORM core version 5.6.9.Final
+2023-04-25 00:40:50,383 INFO org.hibernate.annotations.common.Version [main] HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2023-04-25 00:40:50,612 INFO com.zaxxer.hikari.HikariDataSource [main] HikariPool-1 - Starting...
+2023-04-25 00:40:50,906 INFO com.zaxxer.hikari.HikariDataSource [main] HikariPool-1 - Start completed.
+2023-04-25 00:40:50,926 INFO org.hibernate.dialect.Dialect [main] HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL10Dialect
+2023-04-25 00:40:51,819 INFO org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator [main] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-04-25 00:40:51,831 INFO org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean [main] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-04-25 00:40:51,851 INFO com.example.telegrambot.TelegramBotApplication [main] Started TelegramBotApplication in 6.122 seconds (JVM running for 6.916)
+2023-04-25 00:40:53,356 INFO com.example.telegrambot.TelegramBotApplication [main] Started TelegramBotApplication in 5.611 seconds (JVM running for 6.6)
+2023-04-25 00:40:57,317 ERROR org.telegram.telegrambots.updatesreceivers.DefaultBotSession [AutoShow Telegram Connection] Error getting updates: [409] Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+org.telegram.telegrambots.meta.exceptions.TelegramApiRequestException: Error getting updates: [409] Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+	at org.telegram.telegrambots.meta.api.methods.updates.GetUpdates.deserializeResponse(GetUpdates.java:93)
+	at org.telegram.telegrambots.updatesreceivers.DefaultBotSession$ReaderThread.getUpdatesFromServer(DefaultBotSession.java:260)
+	at org.telegram.telegrambots.updatesreceivers.DefaultBotSession$ReaderThread.run(DefaultBotSession.java:189)
+2023-04-25 00:40:57,353 INFO org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean [SpringApplicationShutdownHook] Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-04-25 00:40:57,353 INFO com.zaxxer.hikari.HikariDataSource [SpringApplicationShutdownHook] HikariPool-1 - Shutdown initiated...
+2023-04-25 00:40:57,353 INFO com.zaxxer.hikari.HikariDataSource [SpringApplicationShutdownHook] HikariPool-1 - Shutdown completed.
+2023-04-25 00:40:59,040 INFO com.example.telegrambot.TelegramBotApplication [main] Starting TelegramBotApplication using Java 15.0.1 on WIN-D9SD1HSNER2 with PID 12736 (E:\JavaProjects\telegram-bot\telegram-bot\target\classes started by Руслан in E:\JavaProjects\telegram-bot\telegram-bot)
+2023-04-25 00:40:59,056 DEBUG com.example.telegrambot.TelegramBotApplication [main] Running with Spring Boot v2.7.1, Spring v5.3.21
+2023-04-25 00:40:59,056 INFO com.example.telegrambot.TelegramBotApplication [main] No active profile set, falling back to 1 default profile: "default"
+2023-04-25 00:40:59,689 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-04-25 00:40:59,758 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Finished Spring Data repository scanning in 61 ms. Found 4 JPA repository interfaces.
+2023-04-25 00:41:00,259 INFO org.hibernate.jpa.internal.util.LogHelper [main] HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-04-25 00:41:00,328 INFO org.hibernate.Version [main] HHH000412: Hibernate ORM core version 5.6.9.Final
+2023-04-25 00:41:00,491 INFO org.hibernate.annotations.common.Version [main] HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2023-04-25 00:41:00,644 INFO com.zaxxer.hikari.HikariDataSource [main] HikariPool-1 - Starting...
+2023-04-25 00:41:00,831 INFO com.zaxxer.hikari.HikariDataSource [main] HikariPool-1 - Start completed.
+2023-04-25 00:41:00,839 INFO org.hibernate.dialect.Dialect [main] HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL10Dialect
+2023-04-25 00:41:01,414 INFO org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator [main] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-04-25 00:41:01,424 INFO org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean [main] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-04-25 00:41:02,545 INFO com.example.telegrambot.TelegramBotApplication [main] Started TelegramBotApplication in 3.902 seconds (JVM running for 4.634)
+2023-04-25 00:41:14,518 INFO com.example.telegrambot.TelegramBotApplication [main] Starting TelegramBotApplication using Java 15.0.1 on WIN-D9SD1HSNER2 with PID 8472 (E:\JavaProjects\telegram-bot\telegram-bot\target\classes started by Руслан in E:\JavaProjects\telegram-bot\telegram-bot)
+2023-04-25 00:41:14,533 DEBUG com.example.telegrambot.TelegramBotApplication [main] Running with Spring Boot v2.7.1, Spring v5.3.21
+2023-04-25 00:41:14,533 INFO com.example.telegrambot.TelegramBotApplication [main] No active profile set, falling back to 1 default profile: "default"
+2023-04-25 00:41:15,156 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-04-25 00:41:15,218 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Finished Spring Data repository scanning in 57 ms. Found 4 JPA repository interfaces.
+2023-04-25 00:41:15,688 INFO org.hibernate.jpa.internal.util.LogHelper [main] HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-04-25 00:41:15,735 INFO org.hibernate.Version [main] HHH000412: Hibernate ORM core version 5.6.9.Final
+2023-04-25 00:41:15,905 INFO org.hibernate.annotations.common.Version [main] HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2023-04-25 00:41:16,074 INFO com.zaxxer.hikari.HikariDataSource [main] HikariPool-1 - Starting...
+2023-04-25 00:41:16,290 INFO com.zaxxer.hikari.HikariDataSource [main] HikariPool-1 - Start completed.
+2023-04-25 00:41:16,306 INFO org.hibernate.dialect.Dialect [main] HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL10Dialect
+2023-04-25 00:41:16,998 INFO org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator [main] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-04-25 00:41:17,016 INFO org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean [main] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-04-25 00:41:18,329 INFO com.example.telegrambot.TelegramBotApplication [main] Started TelegramBotApplication in 4.177 seconds (JVM running for 4.942)
+2023-04-25 00:43:48,139 INFO org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean [SpringApplicationShutdownHook] Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-04-25 00:43:48,139 INFO com.zaxxer.hikari.HikariDataSource [SpringApplicationShutdownHook] HikariPool-1 - Shutdown initiated...
+2023-04-25 00:43:48,139 INFO com.zaxxer.hikari.HikariDataSource [SpringApplicationShutdownHook] HikariPool-1 - Shutdown completed.
+2023-04-25 00:43:49,958 INFO com.example.telegrambot.TelegramBotApplication [main] Starting TelegramBotApplication using Java 15.0.1 on WIN-D9SD1HSNER2 with PID 3384 (E:\JavaProjects\telegram-bot\telegram-bot\target\classes started by Руслан in E:\JavaProjects\telegram-bot\telegram-bot)
+2023-04-25 00:43:49,958 DEBUG com.example.telegrambot.TelegramBotApplication [main] Running with Spring Boot v2.7.1, Spring v5.3.21
+2023-04-25 00:43:49,958 INFO com.example.telegrambot.TelegramBotApplication [main] No active profile set, falling back to 1 default profile: "default"
+2023-04-25 00:43:50,598 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-04-25 00:43:50,674 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Finished Spring Data repository scanning in 73 ms. Found 4 JPA repository interfaces.
+2023-04-25 00:43:51,085 INFO org.hibernate.jpa.internal.util.LogHelper [main] HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-04-25 00:43:51,148 INFO org.hibernate.Version [main] HHH000412: Hibernate ORM core version 5.6.9.Final
+2023-04-25 00:43:51,286 INFO org.hibernate.annotations.common.Version [main] HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2023-04-25 00:43:51,433 INFO com.zaxxer.hikari.HikariDataSource [main] HikariPool-1 - Starting...
+2023-04-25 00:43:51,631 INFO com.zaxxer.hikari.HikariDataSource [main] HikariPool-1 - Start completed.
+2023-04-25 00:43:51,647 INFO org.hibernate.dialect.Dialect [main] HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL10Dialect
+2023-04-25 00:43:52,195 INFO org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator [main] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-04-25 00:43:52,211 INFO org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean [main] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-04-25 00:43:53,326 INFO com.example.telegrambot.TelegramBotApplication [main] Started TelegramBotApplication in 3.721 seconds (JVM running for 4.372)
+2023-04-25 00:44:10,260 INFO com.example.telegrambot.TelegramBotApplication [main] Starting TelegramBotApplication using Java 15.0.1 on WIN-D9SD1HSNER2 with PID 3632 (E:\JavaProjects\telegram-bot\telegram-bot\target\classes started by Руслан in E:\JavaProjects\telegram-bot\telegram-bot)
+2023-04-25 00:44:10,260 DEBUG com.example.telegrambot.TelegramBotApplication [main] Running with Spring Boot v2.7.1, Spring v5.3.21
+2023-04-25 00:44:10,260 INFO com.example.telegrambot.TelegramBotApplication [main] No active profile set, falling back to 1 default profile: "default"
+2023-04-25 00:44:10,739 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-04-25 00:44:10,808 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Finished Spring Data repository scanning in 58 ms. Found 4 JPA repository interfaces.
+2023-04-25 00:44:11,278 INFO org.hibernate.jpa.internal.util.LogHelper [main] HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-04-25 00:44:11,341 INFO org.hibernate.Version [main] HHH000412: Hibernate ORM core version 5.6.9.Final
+2023-04-25 00:44:11,494 INFO org.hibernate.annotations.common.Version [main] HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2023-04-25 00:44:11,676 INFO com.zaxxer.hikari.HikariDataSource [main] HikariPool-1 - Starting...
+2023-04-25 00:44:11,905 INFO com.zaxxer.hikari.HikariDataSource [main] HikariPool-1 - Start completed.
+2023-04-25 00:44:11,915 INFO org.hibernate.dialect.Dialect [main] HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL10Dialect
+2023-04-25 00:44:12,581 INFO org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator [main] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-04-25 00:44:12,591 INFO org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean [main] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-04-25 00:44:13,901 INFO com.example.telegrambot.TelegramBotApplication [main] Started TelegramBotApplication in 3.943 seconds (JVM running for 4.583)
+2023-04-25 00:45:55,903 WARN com.zaxxer.hikari.pool.HikariPool [HikariPool-1 housekeeper] HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=1m43s899ms364µs).
+2023-04-25 00:45:55,934 INFO org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean [SpringApplicationShutdownHook] Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-04-25 00:45:55,934 INFO com.zaxxer.hikari.HikariDataSource [SpringApplicationShutdownHook] HikariPool-1 - Shutdown initiated...
+2023-04-25 00:45:55,950 INFO com.zaxxer.hikari.HikariDataSource [SpringApplicationShutdownHook] HikariPool-1 - Shutdown completed.
+2023-04-25 00:45:57,345 INFO com.example.telegrambot.TelegramBotApplication [main] Starting TelegramBotApplication using Java 15.0.1 on WIN-D9SD1HSNER2 with PID 9376 (E:\JavaProjects\telegram-bot\telegram-bot\target\classes started by Руслан in E:\JavaProjects\telegram-bot\telegram-bot)
+2023-04-25 00:45:57,345 DEBUG com.example.telegrambot.TelegramBotApplication [main] Running with Spring Boot v2.7.1, Spring v5.3.21
+2023-04-25 00:45:57,345 INFO com.example.telegrambot.TelegramBotApplication [main] No active profile set, falling back to 1 default profile: "default"
+2023-04-25 00:45:58,006 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-04-25 00:45:58,090 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Finished Spring Data repository scanning in 72 ms. Found 4 JPA repository interfaces.
+2023-04-25 00:45:58,484 INFO org.hibernate.jpa.internal.util.LogHelper [main] HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-04-25 00:45:58,526 INFO org.hibernate.Version [main] HHH000412: Hibernate ORM core version 5.6.9.Final
+2023-04-25 00:45:58,685 INFO org.hibernate.annotations.common.Version [main] HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2023-04-25 00:45:58,832 INFO com.zaxxer.hikari.HikariDataSource [main] HikariPool-1 - Starting...
+2023-04-25 00:45:59,022 INFO com.zaxxer.hikari.HikariDataSource [main] HikariPool-1 - Start completed.
+2023-04-25 00:45:59,038 INFO org.hibernate.dialect.Dialect [main] HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL10Dialect
+2023-04-25 00:45:59,608 INFO org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator [main] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-04-25 00:45:59,608 INFO org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean [main] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-04-25 00:46:00,778 INFO com.example.telegrambot.TelegramBotApplication [main] Started TelegramBotApplication in 3.794 seconds (JVM running for 4.4)
+2023-04-25 00:46:02,593 ERROR org.telegram.telegrambots.updatesreceivers.DefaultBotSession [AutoShow Telegram Executor] Cannot invoke "org.telegram.telegrambots.meta.api.objects.Message.getChatId()" because the return value of "org.telegram.telegrambots.meta.api.objects.Update.getMessage()" is null
+java.lang.NullPointerException: Cannot invoke "org.telegram.telegrambots.meta.api.objects.Message.getChatId()" because the return value of "org.telegram.telegrambots.meta.api.objects.Update.getMessage()" is null
+	at com.example.telegrambot.command.UserCommand.CallBackMoreInfoCommand.execute(CallBackMoreInfoCommand.java:25)
+	at com.example.telegrambot.bot.TelegramBot.onUpdateReceived(TelegramBot.java:90)
 	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
 	at org.telegram.telegrambots.meta.generics.LongPollingBot.onUpdatesReceived(LongPollingBot.java:27)
 	at org.telegram.telegrambots.updatesreceivers.DefaultBotSession$HandlerThread.run(DefaultBotSession.java:317)
-2023-04-22 02:29:43,086 INFO com.example.telegrambot.TelegramBotApplication [main] Starting TelegramBotApplication using Java 15.0.1 on WIN-D9SD1HSNER2 with PID 6312 (E:\JavaProjects\telegram-bot\telegram-bot\target\classes started by Руслан in E:\JavaProjects\telegram-bot\telegram-bot)
-2023-04-22 02:29:43,101 DEBUG com.example.telegrambot.TelegramBotApplication [main] Running with Spring Boot v2.7.1, Spring v5.3.21
-2023-04-22 02:29:43,101 INFO com.example.telegrambot.TelegramBotApplication [main] No active profile set, falling back to 1 default profile: "default"
-2023-04-22 02:29:43,587 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2023-04-22 02:29:43,656 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Finished Spring Data repository scanning in 53 ms. Found 3 JPA repository interfaces.
-2023-04-22 02:29:44,135 INFO org.hibernate.jpa.internal.util.LogHelper [main] HHH000204: Processing PersistenceUnitInfo [name: default]
-2023-04-22 02:29:44,173 INFO org.hibernate.Version [main] HHH000412: Hibernate ORM core version 5.6.9.Final
-2023-04-22 02:29:44,351 INFO org.hibernate.annotations.common.Version [main] HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
-2023-04-22 02:29:44,520 INFO com.zaxxer.hikari.HikariDataSource [main] HikariPool-1 - Starting...
-2023-04-22 02:29:44,742 INFO com.zaxxer.hikari.HikariDataSource [main] HikariPool-1 - Start completed.
-2023-04-22 02:29:44,760 INFO org.hibernate.dialect.Dialect [main] HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL10Dialect
-2023-04-22 02:29:45,374 INFO org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator [main] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
-2023-04-22 02:29:45,384 INFO org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean [main] Initialized JPA EntityManagerFactory for persistence unit 'default'
-2023-04-22 02:29:46,576 INFO com.example.telegrambot.TelegramBotApplication [main] Started TelegramBotApplication in 3.81 seconds (JVM running for 5.069)
-2023-04-22 02:30:37,902 WARN com.zaxxer.hikari.pool.HikariPool [HikariPool-1 housekeeper] HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=53s60ms703µs300ns).
-2023-04-22 02:30:59,798 INFO org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean [SpringApplicationShutdownHook] Closing JPA EntityManagerFactory for persistence unit 'default'
-2023-04-22 02:30:59,798 INFO com.zaxxer.hikari.HikariDataSource [SpringApplicationShutdownHook] HikariPool-1 - Shutdown initiated...
-2023-04-22 02:30:59,814 INFO com.zaxxer.hikari.HikariDataSource [SpringApplicationShutdownHook] HikariPool-1 - Shutdown completed.
-2023-04-22 02:43:20,067 INFO com.example.telegrambot.TelegramBotApplication [main] Starting TelegramBotApplication using Java 15.0.1 on WIN-D9SD1HSNER2 with PID 1224 (E:\JavaProjects\telegram-bot\telegram-bot\target\classes started by Руслан in E:\JavaProjects\telegram-bot\telegram-bot)
-2023-04-22 02:43:20,067 DEBUG com.example.telegrambot.TelegramBotApplication [main] Running with Spring Boot v2.7.1, Spring v5.3.21
-2023-04-22 02:43:20,067 INFO com.example.telegrambot.TelegramBotApplication [main] No active profile set, falling back to 1 default profile: "default"
-2023-04-22 02:43:20,614 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2023-04-22 02:43:20,674 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Finished Spring Data repository scanning in 53 ms. Found 3 JPA repository interfaces.
-2023-04-22 02:43:21,059 INFO org.hibernate.jpa.internal.util.LogHelper [main] HHH000204: Processing PersistenceUnitInfo [name: default]
-2023-04-22 02:43:21,107 INFO org.hibernate.Version [main] HHH000412: Hibernate ORM core version 5.6.9.Final
-2023-04-22 02:43:21,248 INFO org.hibernate.annotations.common.Version [main] HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
-2023-04-22 02:43:21,391 INFO com.zaxxer.hikari.HikariDataSource [main] HikariPool-1 - Starting...
-2023-04-22 02:43:21,591 INFO com.zaxxer.hikari.HikariDataSource [main] HikariPool-1 - Start completed.
-2023-04-22 02:43:21,603 INFO org.hibernate.dialect.Dialect [main] HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL10Dialect
-2023-04-22 02:43:22,136 INFO org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator [main] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
-2023-04-22 02:43:22,146 INFO org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean [main] Initialized JPA EntityManagerFactory for persistence unit 'default'
-2023-04-22 02:43:23,157 INFO com.example.telegrambot.TelegramBotApplication [main] Started TelegramBotApplication in 3.444 seconds (JVM running for 3.951)
-2023-04-22 02:43:26,206 INFO com.example.telegrambot.command.StartCommand [AutoShow Telegram Executor] Replied to user Руслан
-2023-04-22 02:43:35,400 ERROR org.telegram.telegrambots.updatesreceivers.DefaultBotSession [AutoShow Telegram Executor] Cannot invoke "org.telegram.telegrambots.meta.api.objects.Message.getChat()" because the return value of "org.telegram.telegrambots.meta.api.objects.Update.getMessage()" is null
-java.lang.NullPointerException: Cannot invoke "org.telegram.telegrambots.meta.api.objects.Message.getChat()" because the return value of "org.telegram.telegrambots.meta.api.objects.Update.getMessage()" is null
-	at com.example.telegrambot.bot.TelegramBot.onUpdateReceived(TelegramBot.java:107)
+2023-04-25 00:46:12,941 INFO com.example.telegrambot.TelegramBotApplication [main] Starting TelegramBotApplication using Java 15.0.1 on WIN-D9SD1HSNER2 with PID 13664 (E:\JavaProjects\telegram-bot\telegram-bot\target\classes started by Руслан in E:\JavaProjects\telegram-bot\telegram-bot)
+2023-04-25 00:46:12,941 DEBUG com.example.telegrambot.TelegramBotApplication [main] Running with Spring Boot v2.7.1, Spring v5.3.21
+2023-04-25 00:46:12,941 INFO com.example.telegrambot.TelegramBotApplication [main] No active profile set, falling back to 1 default profile: "default"
+2023-04-25 00:46:13,510 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-04-25 00:46:13,611 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Finished Spring Data repository scanning in 64 ms. Found 4 JPA repository interfaces.
+2023-04-25 00:46:14,081 INFO org.hibernate.jpa.internal.util.LogHelper [main] HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-04-25 00:46:14,143 INFO org.hibernate.Version [main] HHH000412: Hibernate ORM core version 5.6.9.Final
+2023-04-25 00:46:14,312 INFO org.hibernate.annotations.common.Version [main] HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2023-04-25 00:46:14,488 INFO com.zaxxer.hikari.HikariDataSource [main] HikariPool-1 - Starting...
+2023-04-25 00:46:14,720 INFO com.zaxxer.hikari.HikariDataSource [main] HikariPool-1 - Start completed.
+2023-04-25 00:46:14,740 INFO org.hibernate.dialect.Dialect [main] HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL10Dialect
+2023-04-25 00:46:15,356 INFO org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator [main] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-04-25 00:46:15,371 INFO org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean [main] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-04-25 00:46:16,690 INFO com.example.telegrambot.TelegramBotApplication [main] Started TelegramBotApplication in 4.156 seconds (JVM running for 4.945)
+2023-04-25 00:46:48,594 ERROR org.telegram.telegrambots.updatesreceivers.DefaultBotSession [AutoShow Telegram Executor] Cannot invoke "org.telegram.telegrambots.meta.api.objects.Message.getChatId()" because the return value of "org.telegram.telegrambots.meta.api.objects.Update.getMessage()" is null
+java.lang.NullPointerException: Cannot invoke "org.telegram.telegrambots.meta.api.objects.Message.getChatId()" because the return value of "org.telegram.telegrambots.meta.api.objects.Update.getMessage()" is null
+	at com.example.telegrambot.command.UserCommand.CallBackMoreInfoCommand.execute(CallBackMoreInfoCommand.java:25)
+	at com.example.telegrambot.bot.TelegramBot.onUpdateReceived(TelegramBot.java:90)
 	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
 	at org.telegram.telegrambots.meta.generics.LongPollingBot.onUpdatesReceived(LongPollingBot.java:27)
 	at org.telegram.telegrambots.updatesreceivers.DefaultBotSession$HandlerThread.run(DefaultBotSession.java:317)
-2023-04-22 02:43:54,135 ERROR org.telegram.telegrambots.updatesreceivers.DefaultBotSession [AutoShow Telegram Executor] Cannot invoke "org.telegram.telegrambots.meta.api.objects.Message.getChat()" because the return value of "org.telegram.telegrambots.meta.api.objects.Update.getMessage()" is null
-java.lang.NullPointerException: Cannot invoke "org.telegram.telegrambots.meta.api.objects.Message.getChat()" because the return value of "org.telegram.telegrambots.meta.api.objects.Update.getMessage()" is null
-	at com.example.telegrambot.bot.TelegramBot.onUpdateReceived(TelegramBot.java:107)
+2023-04-25 00:46:50,484 ERROR org.telegram.telegrambots.updatesreceivers.DefaultBotSession [AutoShow Telegram Executor] Cannot invoke "org.telegram.telegrambots.meta.api.objects.Message.getChatId()" because the return value of "org.telegram.telegrambots.meta.api.objects.Update.getMessage()" is null
+java.lang.NullPointerException: Cannot invoke "org.telegram.telegrambots.meta.api.objects.Message.getChatId()" because the return value of "org.telegram.telegrambots.meta.api.objects.Update.getMessage()" is null
+	at com.example.telegrambot.command.UserCommand.CallBackMoreInfoCommand.execute(CallBackMoreInfoCommand.java:25)
+	at com.example.telegrambot.bot.TelegramBot.onUpdateReceived(TelegramBot.java:90)
 	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
 	at org.telegram.telegrambots.meta.generics.LongPollingBot.onUpdatesReceived(LongPollingBot.java:27)
 	at org.telegram.telegrambots.updatesreceivers.DefaultBotSession$HandlerThread.run(DefaultBotSession.java:317)
-2023-04-22 02:44:04,240 INFO com.example.telegrambot.TelegramBotApplication [main] Starting TelegramBotApplication using Java 15.0.1 on WIN-D9SD1HSNER2 with PID 15444 (E:\JavaProjects\telegram-bot\telegram-bot\target\classes started by Руслан in E:\JavaProjects\telegram-bot\telegram-bot)
-2023-04-22 02:44:04,240 DEBUG com.example.telegrambot.TelegramBotApplication [main] Running with Spring Boot v2.7.1, Spring v5.3.21
-2023-04-22 02:44:04,240 INFO com.example.telegrambot.TelegramBotApplication [main] No active profile set, falling back to 1 default profile: "default"
-2023-04-22 02:44:04,866 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2023-04-22 02:44:04,920 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Finished Spring Data repository scanning in 54 ms. Found 3 JPA repository interfaces.
-2023-04-22 02:44:05,396 INFO org.hibernate.jpa.internal.util.LogHelper [main] HHH000204: Processing PersistenceUnitInfo [name: default]
-2023-04-22 02:44:05,453 INFO org.hibernate.Version [main] HHH000412: Hibernate ORM core version 5.6.9.Final
-2023-04-22 02:44:05,638 INFO org.hibernate.annotations.common.Version [main] HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
-2023-04-22 02:44:05,807 INFO com.zaxxer.hikari.HikariDataSource [main] HikariPool-1 - Starting...
-2023-04-22 02:44:06,048 INFO com.zaxxer.hikari.HikariDataSource [main] HikariPool-1 - Start completed.
-2023-04-22 02:44:06,061 INFO org.hibernate.dialect.Dialect [main] HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL10Dialect
-2023-04-22 02:44:06,702 INFO org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator [main] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
-2023-04-22 02:44:06,718 INFO org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean [main] Initialized JPA EntityManagerFactory for persistence unit 'default'
-2023-04-22 02:44:08,682 INFO com.example.telegrambot.TelegramBotApplication [main] Started TelegramBotApplication in 4.852 seconds (JVM running for 5.781)
-2023-04-22 02:44:08,951 ERROR org.telegram.telegrambots.updatesreceivers.DefaultBotSession [AutoShow Telegram Executor] Cannot invoke "org.telegram.telegrambots.meta.api.objects.Message.getChat()" because the return value of "org.telegram.telegrambots.meta.api.objects.Update.getMessage()" is null
-java.lang.NullPointerException: Cannot invoke "org.telegram.telegrambots.meta.api.objects.Message.getChat()" because the return value of "org.telegram.telegrambots.meta.api.objects.Update.getMessage()" is null
-	at com.example.telegrambot.bot.TelegramBot.onUpdateReceived(TelegramBot.java:107)
+2023-04-25 00:46:50,515 INFO org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean [SpringApplicationShutdownHook] Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-04-25 00:46:50,515 INFO com.zaxxer.hikari.HikariDataSource [SpringApplicationShutdownHook] HikariPool-1 - Shutdown initiated...
+2023-04-25 00:46:50,515 INFO com.zaxxer.hikari.HikariDataSource [SpringApplicationShutdownHook] HikariPool-1 - Shutdown completed.
+2023-04-25 00:46:52,711 INFO com.example.telegrambot.TelegramBotApplication [main] Starting TelegramBotApplication using Java 15.0.1 on WIN-D9SD1HSNER2 with PID 10560 (E:\JavaProjects\telegram-bot\telegram-bot\target\classes started by Руслан in E:\JavaProjects\telegram-bot\telegram-bot)
+2023-04-25 00:46:52,711 DEBUG com.example.telegrambot.TelegramBotApplication [main] Running with Spring Boot v2.7.1, Spring v5.3.21
+2023-04-25 00:46:52,711 INFO com.example.telegrambot.TelegramBotApplication [main] No active profile set, falling back to 1 default profile: "default"
+2023-04-25 00:46:53,365 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-04-25 00:46:53,436 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Finished Spring Data repository scanning in 56 ms. Found 4 JPA repository interfaces.
+2023-04-25 00:46:53,898 INFO org.hibernate.jpa.internal.util.LogHelper [main] HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-04-25 00:46:53,951 INFO org.hibernate.Version [main] HHH000412: Hibernate ORM core version 5.6.9.Final
+2023-04-25 00:46:54,098 INFO org.hibernate.annotations.common.Version [main] HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2023-04-25 00:46:54,269 INFO com.zaxxer.hikari.HikariDataSource [main] HikariPool-1 - Starting...
+2023-04-25 00:46:54,498 INFO com.zaxxer.hikari.HikariDataSource [main] HikariPool-1 - Start completed.
+2023-04-25 00:46:54,510 INFO org.hibernate.dialect.Dialect [main] HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL10Dialect
+2023-04-25 00:46:55,224 INFO org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator [main] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-04-25 00:46:55,234 INFO org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean [main] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-04-25 00:46:56,511 INFO com.example.telegrambot.TelegramBotApplication [main] Started TelegramBotApplication in 4.222 seconds (JVM running for 5.131)
+2023-04-25 00:48:07,382 WARN com.zaxxer.hikari.pool.HikariPool [HikariPool-1 housekeeper] HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=1m12s773ms415µs800ns).
+2023-04-25 00:49:59,085 WARN com.zaxxer.hikari.pool.HikariPool [HikariPool-1 housekeeper] HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=45s139ms615µs200ns).
+2023-04-25 00:49:59,085 ERROR org.telegram.telegrambots.updatesreceivers.DefaultBotSession [AutoShow Telegram Executor] Cannot invoke "org.telegram.telegrambots.meta.api.objects.Message.getChatId()" because the return value of "org.telegram.telegrambots.meta.api.objects.Update.getMessage()" is null
+java.lang.NullPointerException: Cannot invoke "org.telegram.telegrambots.meta.api.objects.Message.getChatId()" because the return value of "org.telegram.telegrambots.meta.api.objects.Update.getMessage()" is null
+	at com.example.telegrambot.command.UserCommand.CallBackMoreInfoCommand.execute(CallBackMoreInfoCommand.java:25)
+	at com.example.telegrambot.bot.TelegramBot.onUpdateReceived(TelegramBot.java:90)
 	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
 	at org.telegram.telegrambots.meta.generics.LongPollingBot.onUpdatesReceived(LongPollingBot.java:27)
 	at org.telegram.telegrambots.updatesreceivers.DefaultBotSession$HandlerThread.run(DefaultBotSession.java:317)
-2023-04-22 02:44:33,224 INFO com.example.telegrambot.command.StartCommand [AutoShow Telegram Executor] Replied to user Руслан
-2023-04-22 02:45:13,921 ERROR org.telegram.telegrambots.updatesreceivers.DefaultBotSession [AutoShow Telegram Executor] Cannot invoke "org.telegram.telegrambots.meta.api.objects.Message.getChat()" because the return value of "org.telegram.telegrambots.meta.api.objects.Update.getMessage()" is null
-java.lang.NullPointerException: Cannot invoke "org.telegram.telegrambots.meta.api.objects.Message.getChat()" because the return value of "org.telegram.telegrambots.meta.api.objects.Update.getMessage()" is null
-	at com.example.telegrambot.bot.TelegramBot.onUpdateReceived(TelegramBot.java:107)
+2023-04-25 00:49:59,117 INFO org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean [SpringApplicationShutdownHook] Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-04-25 00:49:59,117 INFO com.zaxxer.hikari.HikariDataSource [SpringApplicationShutdownHook] HikariPool-1 - Shutdown initiated...
+2023-04-25 00:49:59,117 INFO com.zaxxer.hikari.HikariDataSource [SpringApplicationShutdownHook] HikariPool-1 - Shutdown completed.
+2023-04-25 00:50:03,351 INFO com.example.telegrambot.TelegramBotApplication [main] Starting TelegramBotApplication using Java 15.0.1 on WIN-D9SD1HSNER2 with PID 16296 (E:\JavaProjects\telegram-bot\telegram-bot\target\classes started by Руслан in E:\JavaProjects\telegram-bot\telegram-bot)
+2023-04-25 00:50:03,351 DEBUG com.example.telegrambot.TelegramBotApplication [main] Running with Spring Boot v2.7.1, Spring v5.3.21
+2023-04-25 00:50:03,351 INFO com.example.telegrambot.TelegramBotApplication [main] No active profile set, falling back to 1 default profile: "default"
+2023-04-25 00:50:03,896 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-04-25 00:50:03,980 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Finished Spring Data repository scanning in 73 ms. Found 4 JPA repository interfaces.
+2023-04-25 00:50:04,475 INFO org.hibernate.jpa.internal.util.LogHelper [main] HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-04-25 00:50:04,513 INFO org.hibernate.Version [main] HHH000412: Hibernate ORM core version 5.6.9.Final
+2023-04-25 00:50:04,682 INFO org.hibernate.annotations.common.Version [main] HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2023-04-25 00:50:04,860 INFO com.zaxxer.hikari.HikariDataSource [main] HikariPool-1 - Starting...
+2023-04-25 00:50:05,083 INFO com.zaxxer.hikari.HikariDataSource [main] HikariPool-1 - Start completed.
+2023-04-25 00:50:05,099 INFO org.hibernate.dialect.Dialect [main] HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL10Dialect
+2023-04-25 00:50:05,816 INFO org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator [main] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-04-25 00:50:05,832 INFO org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean [main] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-04-25 00:50:07,331 INFO com.example.telegrambot.TelegramBotApplication [main] Started TelegramBotApplication in 4.32 seconds (JVM running for 5.162)
+2023-04-25 00:50:29,991 ERROR org.telegram.telegrambots.updatesreceivers.DefaultBotSession [AutoShow Telegram Executor] Cannot invoke "org.telegram.telegrambots.meta.api.objects.Message.getChatId()" because the return value of "org.telegram.telegrambots.meta.api.objects.Update.getMessage()" is null
+java.lang.NullPointerException: Cannot invoke "org.telegram.telegrambots.meta.api.objects.Message.getChatId()" because the return value of "org.telegram.telegrambots.meta.api.objects.Update.getMessage()" is null
+	at com.example.telegrambot.command.UserCommand.CallBackMoreInfoCommand.execute(CallBackMoreInfoCommand.java:25)
+	at com.example.telegrambot.bot.TelegramBot.onUpdateReceived(TelegramBot.java:90)
 	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
 	at org.telegram.telegrambots.meta.generics.LongPollingBot.onUpdatesReceived(LongPollingBot.java:27)
 	at org.telegram.telegrambots.updatesreceivers.DefaultBotSession$HandlerThread.run(DefaultBotSession.java:317)
-2023-04-22 02:46:12,269 WARN com.zaxxer.hikari.pool.HikariPool [HikariPool-1 housekeeper] HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=1m1s486ms352µs100ns).
-2023-04-22 02:46:12,269 ERROR org.telegram.telegrambots.updatesreceivers.DefaultBotSession [AutoShow Telegram Executor] Cannot invoke "org.telegram.telegrambots.meta.api.objects.Message.getChat()" because the return value of "org.telegram.telegrambots.meta.api.objects.Update.getMessage()" is null
-java.lang.NullPointerException: Cannot invoke "org.telegram.telegrambots.meta.api.objects.Message.getChat()" because the return value of "org.telegram.telegrambots.meta.api.objects.Update.getMessage()" is null
-	at com.example.telegrambot.bot.TelegramBot.onUpdateReceived(TelegramBot.java:107)
+2023-04-25 00:50:31,611 INFO org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean [SpringApplicationShutdownHook] Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-04-25 00:50:31,611 INFO com.zaxxer.hikari.HikariDataSource [SpringApplicationShutdownHook] HikariPool-1 - Shutdown initiated...
+2023-04-25 00:50:31,627 INFO com.zaxxer.hikari.HikariDataSource [SpringApplicationShutdownHook] HikariPool-1 - Shutdown completed.
+2023-04-25 00:50:33,955 INFO com.example.telegrambot.TelegramBotApplication [main] Starting TelegramBotApplication using Java 15.0.1 on WIN-D9SD1HSNER2 with PID 8228 (E:\JavaProjects\telegram-bot\telegram-bot\target\classes started by Руслан in E:\JavaProjects\telegram-bot\telegram-bot)
+2023-04-25 00:50:33,971 DEBUG com.example.telegrambot.TelegramBotApplication [main] Running with Spring Boot v2.7.1, Spring v5.3.21
+2023-04-25 00:50:33,971 INFO com.example.telegrambot.TelegramBotApplication [main] No active profile set, falling back to 1 default profile: "default"
+2023-04-25 00:50:34,820 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-04-25 00:50:34,920 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Finished Spring Data repository scanning in 82 ms. Found 4 JPA repository interfaces.
+2023-04-25 00:50:35,476 INFO org.hibernate.jpa.internal.util.LogHelper [main] HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-04-25 00:50:35,545 INFO org.hibernate.Version [main] HHH000412: Hibernate ORM core version 5.6.9.Final
+2023-04-25 00:50:35,746 INFO org.hibernate.annotations.common.Version [main] HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2023-04-25 00:50:35,908 INFO com.zaxxer.hikari.HikariDataSource [main] HikariPool-1 - Starting...
+2023-04-25 00:50:36,147 INFO com.zaxxer.hikari.HikariDataSource [main] HikariPool-1 - Start completed.
+2023-04-25 00:50:36,178 INFO org.hibernate.dialect.Dialect [main] HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL10Dialect
+2023-04-25 00:50:36,864 INFO org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator [main] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-04-25 00:50:36,880 INFO org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean [main] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-04-25 00:50:38,201 INFO com.example.telegrambot.TelegramBotApplication [main] Started TelegramBotApplication in 4.691 seconds (JVM running for 5.649)
+2023-04-25 00:57:15,365 WARN com.zaxxer.hikari.pool.HikariPool [HikariPool-1 housekeeper] HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=6m39s105ms245µs900ns).
+2023-04-25 00:57:15,365 ERROR org.telegram.telegrambots.updatesreceivers.DefaultBotSession [AutoShow Telegram Executor] Cannot invoke "org.telegram.telegrambots.meta.api.objects.Message.getChatId()" because the return value of "org.telegram.telegrambots.meta.api.objects.Update.getMessage()" is null
+java.lang.NullPointerException: Cannot invoke "org.telegram.telegrambots.meta.api.objects.Message.getChatId()" because the return value of "org.telegram.telegrambots.meta.api.objects.Update.getMessage()" is null
+	at com.example.telegrambot.command.UserCommand.CallBackMoreInfoCommand.execute(CallBackMoreInfoCommand.java:25)
+	at com.example.telegrambot.bot.TelegramBot.onUpdateReceived(TelegramBot.java:90)
 	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
 	at org.telegram.telegrambots.meta.generics.LongPollingBot.onUpdatesReceived(LongPollingBot.java:27)
 	at org.telegram.telegrambots.updatesreceivers.DefaultBotSession$HandlerThread.run(DefaultBotSession.java:317)
-2023-04-22 02:47:35,788 WARN com.zaxxer.hikari.pool.HikariPool [HikariPool-1 housekeeper] HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=1m23s515ms766µs100ns).
-2023-04-22 02:47:35,788 ERROR org.telegram.telegrambots.updatesreceivers.DefaultBotSession [AutoShow Telegram Executor] Cannot invoke "org.telegram.telegrambots.meta.api.objects.Message.getChat()" because the return value of "org.telegram.telegrambots.meta.api.objects.Update.getMessage()" is null
-java.lang.NullPointerException: Cannot invoke "org.telegram.telegrambots.meta.api.objects.Message.getChat()" because the return value of "org.telegram.telegrambots.meta.api.objects.Update.getMessage()" is null
-	at com.example.telegrambot.bot.TelegramBot.onUpdateReceived(TelegramBot.java:107)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-	at org.telegram.telegrambots.meta.generics.LongPollingBot.onUpdatesReceived(LongPollingBot.java:27)
-	at org.telegram.telegrambots.updatesreceivers.DefaultBotSession$HandlerThread.run(DefaultBotSession.java:317)
-2023-04-22 02:47:35,841 INFO org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean [SpringApplicationShutdownHook] Closing JPA EntityManagerFactory for persistence unit 'default'
-2023-04-22 02:47:35,842 INFO com.zaxxer.hikari.HikariDataSource [SpringApplicationShutdownHook] HikariPool-1 - Shutdown initiated...
-2023-04-22 02:47:35,842 INFO com.zaxxer.hikari.HikariDataSource [SpringApplicationShutdownHook] HikariPool-1 - Shutdown completed.
-2023-04-22 02:50:50,777 INFO com.example.telegrambot.TelegramBotApplication [main] Starting TelegramBotApplication using Java 15.0.1 on WIN-D9SD1HSNER2 with PID 15008 (E:\JavaProjects\telegram-bot\telegram-bot\target\classes started by Руслан in E:\JavaProjects\telegram-bot\telegram-bot)
-2023-04-22 02:50:50,777 DEBUG com.example.telegrambot.TelegramBotApplication [main] Running with Spring Boot v2.7.1, Spring v5.3.21
-2023-04-22 02:50:50,777 INFO com.example.telegrambot.TelegramBotApplication [main] No active profile set, falling back to 1 default profile: "default"
-2023-04-22 02:50:51,263 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2023-04-22 02:50:51,317 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Finished Spring Data repository scanning in 57 ms. Found 3 JPA repository interfaces.
-2023-04-22 02:50:51,780 INFO org.hibernate.jpa.internal.util.LogHelper [main] HHH000204: Processing PersistenceUnitInfo [name: default]
-2023-04-22 02:50:51,833 INFO org.hibernate.Version [main] HHH000412: Hibernate ORM core version 5.6.9.Final
-2023-04-22 02:50:51,996 INFO org.hibernate.annotations.common.Version [main] HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
-2023-04-22 02:50:52,165 INFO com.zaxxer.hikari.HikariDataSource [main] HikariPool-1 - Starting...
-2023-04-22 02:50:52,396 INFO com.zaxxer.hikari.HikariDataSource [main] HikariPool-1 - Start completed.
-2023-04-22 02:50:52,416 INFO org.hibernate.dialect.Dialect [main] HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL10Dialect
-2023-04-22 02:50:53,076 INFO org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator [main] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
-2023-04-22 02:50:53,092 INFO org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean [main] Initialized JPA EntityManagerFactory for persistence unit 'default'
-2023-04-22 02:50:55,218 INFO com.example.telegrambot.TelegramBotApplication [main] Started TelegramBotApplication in 4.851 seconds (JVM running for 5.616)
-2023-04-22 02:51:33,591 ERROR org.telegram.telegrambots.updatesreceivers.DefaultBotSession [AutoShow Telegram Executor] Cannot invoke "org.telegram.telegrambots.meta.api.objects.Message.getChat()" because the return value of "org.telegram.telegrambots.meta.api.objects.Update.getMessage()" is null
-java.lang.NullPointerException: Cannot invoke "org.telegram.telegrambots.meta.api.objects.Message.getChat()" because the return value of "org.telegram.telegrambots.meta.api.objects.Update.getMessage()" is null
-	at com.example.telegrambot.bot.TelegramBot.onUpdateReceived(TelegramBot.java:107)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-	at org.telegram.telegrambots.meta.generics.LongPollingBot.onUpdatesReceived(LongPollingBot.java:27)
-	at org.telegram.telegrambots.updatesreceivers.DefaultBotSession$HandlerThread.run(DefaultBotSession.java:317)
-2023-04-22 02:51:33,591 ERROR org.telegram.telegrambots.updatesreceivers.DefaultBotSession [AutoShow Telegram Executor] Cannot invoke "org.telegram.telegrambots.meta.api.objects.Message.getChat()" because the return value of "org.telegram.telegrambots.meta.api.objects.Update.getMessage()" is null
-java.lang.NullPointerException: Cannot invoke "org.telegram.telegrambots.meta.api.objects.Message.getChat()" because the return value of "org.telegram.telegrambots.meta.api.objects.Update.getMessage()" is null
-	at com.example.telegrambot.bot.TelegramBot.onUpdateReceived(TelegramBot.java:107)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-	at org.telegram.telegrambots.meta.generics.LongPollingBot.onUpdatesReceived(LongPollingBot.java:27)
-	at org.telegram.telegrambots.updatesreceivers.DefaultBotSession$HandlerThread.run(DefaultBotSession.java:317)
-2023-04-22 02:51:33,607 INFO org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean [SpringApplicationShutdownHook] Closing JPA EntityManagerFactory for persistence unit 'default'
-2023-04-22 02:51:33,607 INFO com.zaxxer.hikari.HikariDataSource [SpringApplicationShutdownHook] HikariPool-1 - Shutdown initiated...
-2023-04-22 02:51:33,623 INFO com.zaxxer.hikari.HikariDataSource [SpringApplicationShutdownHook] HikariPool-1 - Shutdown completed.
+2023-04-25 00:57:15,397 INFO org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean [SpringApplicationShutdownHook] Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-04-25 00:57:15,397 INFO com.zaxxer.hikari.HikariDataSource [SpringApplicationShutdownHook] HikariPool-1 - Shutdown initiated...
+2023-04-25 00:57:15,397 INFO com.zaxxer.hikari.HikariDataSource [SpringApplicationShutdownHook] HikariPool-1 - Shutdown completed.
+2023-04-25 00:57:19,337 INFO com.example.telegrambot.TelegramBotApplication [main] Starting TelegramBotApplication using Java 15.0.1 on WIN-D9SD1HSNER2 with PID 11680 (E:\JavaProjects\telegram-bot\telegram-bot\target\classes started by Руслан in E:\JavaProjects\telegram-bot\telegram-bot)
+2023-04-25 00:57:19,337 DEBUG com.example.telegrambot.TelegramBotApplication [main] Running with Spring Boot v2.7.1, Spring v5.3.21
+2023-04-25 00:57:19,353 INFO com.example.telegrambot.TelegramBotApplication [main] No active profile set, falling back to 1 default profile: "default"
+2023-04-25 00:57:19,938 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-04-25 00:57:20,007 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Finished Spring Data repository scanning in 58 ms. Found 4 JPA repository interfaces.
+2023-04-25 00:57:20,402 INFO org.hibernate.jpa.internal.util.LogHelper [main] HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-04-25 00:57:20,462 INFO org.hibernate.Version [main] HHH000412: Hibernate ORM core version 5.6.9.Final
+2023-04-25 00:57:20,623 INFO org.hibernate.annotations.common.Version [main] HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2023-04-25 00:57:20,796 INFO com.zaxxer.hikari.HikariDataSource [main] HikariPool-1 - Starting...
+2023-04-25 00:57:20,985 INFO com.zaxxer.hikari.HikariDataSource [main] HikariPool-1 - Start completed.
+2023-04-25 00:57:21,000 INFO org.hibernate.dialect.Dialect [main] HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL10Dialect
+2023-04-25 00:57:21,586 INFO org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator [main] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-04-25 00:57:21,602 INFO org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean [main] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-04-25 00:57:22,819 INFO com.example.telegrambot.TelegramBotApplication [main] Started TelegramBotApplication in 3.819 seconds (JVM running for 4.376)
+2023-04-25 00:57:48,413 INFO com.example.telegrambot.TelegramBotApplication [main] Starting TelegramBotApplication using Java 15.0.1 on WIN-D9SD1HSNER2 with PID 10080 (E:\JavaProjects\telegram-bot\telegram-bot\target\classes started by Руслан in E:\JavaProjects\telegram-bot\telegram-bot)
+2023-04-25 00:57:48,413 DEBUG com.example.telegrambot.TelegramBotApplication [main] Running with Spring Boot v2.7.1, Spring v5.3.21
+2023-04-25 00:57:48,413 INFO com.example.telegrambot.TelegramBotApplication [main] No active profile set, falling back to 1 default profile: "default"
+2023-04-25 00:57:49,145 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-04-25 00:57:49,230 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Finished Spring Data repository scanning in 71 ms. Found 4 JPA repository interfaces.
+2023-04-25 00:57:49,731 INFO org.hibernate.jpa.internal.util.LogHelper [main] HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-04-25 00:57:49,778 INFO org.hibernate.Version [main] HHH000412: Hibernate ORM core version 5.6.9.Final
+2023-04-25 00:57:49,985 INFO org.hibernate.annotations.common.Version [main] HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2023-04-25 00:57:50,186 INFO com.zaxxer.hikari.HikariDataSource [main] HikariPool-1 - Starting...
+2023-04-25 00:57:50,449 INFO com.zaxxer.hikari.HikariDataSource [main] HikariPool-1 - Start completed.
+2023-04-25 00:57:50,464 INFO org.hibernate.dialect.Dialect [main] HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL10Dialect
+2023-04-25 00:57:51,119 INFO org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator [main] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-04-25 00:57:51,135 INFO org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean [main] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-04-25 00:57:52,559 INFO com.example.telegrambot.TelegramBotApplication [main] Started TelegramBotApplication in 4.604 seconds (JVM running for 5.522)
+2023-04-25 01:10:24,408 WARN com.zaxxer.hikari.pool.HikariPool [HikariPool-1 housekeeper] HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=11m29s979ms369µs300ns).
+2023-04-25 01:10:24,424 ERROR org.telegram.telegrambots.updatesreceivers.DefaultBotSession [AutoShow Telegram Connection] Remote host terminated the handshake
+javax.net.ssl.SSLHandshakeException: Remote host terminated the handshake
+	at java.base/sun.security.ssl.SSLSocketImpl.handleEOF(SSLSocketImpl.java:1687)
+	at java.base/sun.security.ssl.SSLSocketImpl.decode(SSLSocketImpl.java:1496)
+	at java.base/sun.security.ssl.SSLSocketImpl.readHandshakeRecord(SSLSocketImpl.java:1394)
+	at java.base/sun.security.ssl.SSLSocketImpl.startHandshake(SSLSocketImpl.java:441)
+	at java.base/sun.security.ssl.SSLSocketImpl.startHandshake(SSLSocketImpl.java:412)
+	at org.apache.http.conn.ssl.SSLConnectionSocketFactory.createLayeredSocket(SSLConnectionSocketFactory.java:436)
+	at org.apache.http.conn.ssl.SSLConnectionSocketFactory.connectSocket(SSLConnectionSocketFactory.java:384)
+	at org.apache.http.impl.conn.DefaultHttpClientConnectionOperator.connect(DefaultHttpClientConnectionOperator.java:142)
+	at org.apache.http.impl.conn.PoolingHttpClientConnectionManager.connect(PoolingHttpClientConnectionManager.java:376)
+	at org.apache.http.impl.execchain.MainClientExec.establishRoute(MainClientExec.java:393)
+	at org.apache.http.impl.execchain.MainClientExec.execute(MainClientExec.java:236)
+	at org.apache.http.impl.execchain.ProtocolExec.execute(ProtocolExec.java:186)
+	at org.apache.http.impl.execchain.RetryExec.execute(RetryExec.java:89)
+	at org.apache.http.impl.execchain.RedirectExec.execute(RedirectExec.java:110)
+	at org.apache.http.impl.client.InternalHttpClient.doExecute(InternalHttpClient.java:185)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:83)
+	at org.telegram.telegrambots.updatesreceivers.DefaultBotSession$ReaderThread.getUpdatesFromServer(DefaultBotSession.java:250)
+	at org.telegram.telegrambots.updatesreceivers.DefaultBotSession$ReaderThread.run(DefaultBotSession.java:189)
+Caused by: java.io.EOFException: SSL peer shut down incorrectly
+	at java.base/sun.security.ssl.SSLSocketInputRecord.read(SSLSocketInputRecord.java:483)
+	at java.base/sun.security.ssl.SSLSocketInputRecord.readHeader(SSLSocketInputRecord.java:472)
+	at java.base/sun.security.ssl.SSLSocketInputRecord.decode(SSLSocketInputRecord.java:160)
+	at java.base/sun.security.ssl.SSLTransport.decode(SSLTransport.java:110)
+	at java.base/sun.security.ssl.SSLSocketImpl.decode(SSLSocketImpl.java:1488)
+	... 16 common frames omitted
+2023-04-25 01:10:24,442 INFO org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean [SpringApplicationShutdownHook] Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-04-25 01:10:24,444 INFO com.zaxxer.hikari.HikariDataSource [SpringApplicationShutdownHook] HikariPool-1 - Shutdown initiated...
+2023-04-25 01:10:24,450 INFO com.zaxxer.hikari.HikariDataSource [SpringApplicationShutdownHook] HikariPool-1 - Shutdown completed.
+2023-04-25 01:10:29,483 INFO com.example.telegrambot.TelegramBotApplication [main] Starting TelegramBotApplication using Java 15.0.1 on WIN-D9SD1HSNER2 with PID 4872 (E:\JavaProjects\telegram-bot\telegram-bot\target\classes started by Руслан in E:\JavaProjects\telegram-bot\telegram-bot)
+2023-04-25 01:10:29,483 DEBUG com.example.telegrambot.TelegramBotApplication [main] Running with Spring Boot v2.7.1, Spring v5.3.21
+2023-04-25 01:10:29,483 INFO com.example.telegrambot.TelegramBotApplication [main] No active profile set, falling back to 1 default profile: "default"
+2023-04-25 01:10:30,162 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-04-25 01:10:30,231 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Finished Spring Data repository scanning in 63 ms. Found 4 JPA repository interfaces.
+2023-04-25 01:10:30,701 INFO org.hibernate.jpa.internal.util.LogHelper [main] HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-04-25 01:10:30,764 INFO org.hibernate.Version [main] HHH000412: Hibernate ORM core version 5.6.9.Final
+2023-04-25 01:10:30,902 INFO org.hibernate.annotations.common.Version [main] HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2023-04-25 01:10:31,064 INFO com.zaxxer.hikari.HikariDataSource [main] HikariPool-1 - Starting...
+2023-04-25 01:10:31,249 INFO com.zaxxer.hikari.HikariDataSource [main] HikariPool-1 - Start completed.
+2023-04-25 01:10:31,265 INFO org.hibernate.dialect.Dialect [main] HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL10Dialect
+2023-04-25 01:10:31,839 INFO org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator [main] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-04-25 01:10:31,839 INFO org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean [main] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-04-25 01:10:32,974 INFO com.example.telegrambot.TelegramBotApplication [main] Started TelegramBotApplication in 3.903 seconds (JVM running for 4.519)
+2023-04-25 01:10:59,561 INFO com.example.telegrambot.TelegramBotApplication [main] Starting TelegramBotApplication using Java 15.0.1 on WIN-D9SD1HSNER2 with PID 3628 (E:\JavaProjects\telegram-bot\telegram-bot\target\classes started by Руслан in E:\JavaProjects\telegram-bot\telegram-bot)
+2023-04-25 01:10:59,561 DEBUG com.example.telegrambot.TelegramBotApplication [main] Running with Spring Boot v2.7.1, Spring v5.3.21
+2023-04-25 01:10:59,561 INFO com.example.telegrambot.TelegramBotApplication [main] No active profile set, falling back to 1 default profile: "default"
+2023-04-25 01:11:00,231 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-04-25 01:11:00,316 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Finished Spring Data repository scanning in 66 ms. Found 4 JPA repository interfaces.
+2023-04-25 01:11:00,816 INFO org.hibernate.jpa.internal.util.LogHelper [main] HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-04-25 01:11:00,885 INFO org.hibernate.Version [main] HHH000412: Hibernate ORM core version 5.6.9.Final
+2023-04-25 01:11:01,101 INFO org.hibernate.annotations.common.Version [main] HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2023-04-25 01:11:01,286 INFO com.zaxxer.hikari.HikariDataSource [main] HikariPool-1 - Starting...
+2023-04-25 01:11:01,617 INFO com.zaxxer.hikari.HikariDataSource [main] HikariPool-1 - Start completed.
+2023-04-25 01:11:01,640 INFO org.hibernate.dialect.Dialect [main] HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL10Dialect
+2023-04-25 01:11:02,354 INFO org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator [main] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-04-25 01:11:02,364 INFO org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean [main] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-04-25 01:11:03,803 INFO com.example.telegrambot.TelegramBotApplication [main] Started TelegramBotApplication in 4.68 seconds (JVM running for 5.526)
+2023-04-25 01:12:21,736 INFO org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean [SpringApplicationShutdownHook] Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-04-25 01:12:21,736 INFO com.zaxxer.hikari.HikariDataSource [SpringApplicationShutdownHook] HikariPool-1 - Shutdown initiated...
+2023-04-25 01:12:21,736 INFO com.zaxxer.hikari.HikariDataSource [SpringApplicationShutdownHook] HikariPool-1 - Shutdown completed.
+2023-04-25 01:12:26,384 INFO com.example.telegrambot.TelegramBotApplication [main] Starting TelegramBotApplication using Java 15.0.1 on WIN-D9SD1HSNER2 with PID 6048 (E:\JavaProjects\telegram-bot\telegram-bot\target\classes started by Руслан in E:\JavaProjects\telegram-bot\telegram-bot)
+2023-04-25 01:12:26,384 DEBUG com.example.telegrambot.TelegramBotApplication [main] Running with Spring Boot v2.7.1, Spring v5.3.21
+2023-04-25 01:12:26,384 INFO com.example.telegrambot.TelegramBotApplication [main] No active profile set, falling back to 1 default profile: "default"
+2023-04-25 01:12:26,917 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-04-25 01:12:26,986 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Finished Spring Data repository scanning in 60 ms. Found 4 JPA repository interfaces.
+2023-04-25 01:12:27,518 INFO org.hibernate.jpa.internal.util.LogHelper [main] HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-04-25 01:12:27,565 INFO org.hibernate.Version [main] HHH000412: Hibernate ORM core version 5.6.9.Final
+2023-04-25 01:12:27,766 INFO org.hibernate.annotations.common.Version [main] HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2023-04-25 01:12:27,951 INFO com.zaxxer.hikari.HikariDataSource [main] HikariPool-1 - Starting...
+2023-04-25 01:12:28,179 INFO com.zaxxer.hikari.HikariDataSource [main] HikariPool-1 - Start completed.
+2023-04-25 01:12:28,195 INFO org.hibernate.dialect.Dialect [main] HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL10Dialect
+2023-04-25 01:12:28,881 INFO org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator [main] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-04-25 01:12:28,881 INFO org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean [main] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-04-25 01:12:30,240 INFO com.example.telegrambot.TelegramBotApplication [main] Started TelegramBotApplication in 4.353 seconds (JVM running for 5.105)
+2023-04-25 01:13:16,916 INFO org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean [SpringApplicationShutdownHook] Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-04-25 01:13:16,916 INFO com.zaxxer.hikari.HikariDataSource [SpringApplicationShutdownHook] HikariPool-1 - Shutdown initiated...
+2023-04-25 01:13:16,932 INFO com.zaxxer.hikari.HikariDataSource [SpringApplicationShutdownHook] HikariPool-1 - Shutdown completed.
+2023-04-25 01:13:19,724 INFO com.example.telegrambot.TelegramBotApplication [main] Starting TelegramBotApplication using Java 15.0.1 on WIN-D9SD1HSNER2 with PID 11088 (E:\JavaProjects\telegram-bot\telegram-bot\target\classes started by Руслан in E:\JavaProjects\telegram-bot\telegram-bot)
+2023-04-25 01:13:19,731 DEBUG com.example.telegrambot.TelegramBotApplication [main] Running with Spring Boot v2.7.1, Spring v5.3.21
+2023-04-25 01:13:19,731 INFO com.example.telegrambot.TelegramBotApplication [main] No active profile set, falling back to 1 default profile: "default"
+2023-04-25 01:13:20,379 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-04-25 01:13:20,448 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Finished Spring Data repository scanning in 68 ms. Found 4 JPA repository interfaces.
+2023-04-25 01:13:20,949 INFO org.hibernate.jpa.internal.util.LogHelper [main] HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-04-25 01:13:21,012 INFO org.hibernate.Version [main] HHH000412: Hibernate ORM core version 5.6.9.Final
+2023-04-25 01:13:21,165 INFO org.hibernate.annotations.common.Version [main] HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2023-04-25 01:13:21,335 INFO com.zaxxer.hikari.HikariDataSource [main] HikariPool-1 - Starting...
+2023-04-25 01:13:21,535 INFO com.zaxxer.hikari.HikariDataSource [main] HikariPool-1 - Start completed.
+2023-04-25 01:13:21,551 INFO org.hibernate.dialect.Dialect [main] HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL10Dialect
+2023-04-25 01:13:22,184 INFO org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator [main] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-04-25 01:13:22,199 INFO org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean [main] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-04-25 01:13:23,321 INFO com.example.telegrambot.TelegramBotApplication [main] Started TelegramBotApplication in 3.924 seconds (JVM running for 4.538)
