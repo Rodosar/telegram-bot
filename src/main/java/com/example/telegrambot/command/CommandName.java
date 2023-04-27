@@ -12,6 +12,7 @@ public enum CommandName {
     ADDSHOW("/addshow"),
     EDITSHOW("/editshow"),
     DELETESHOW("/deleteshow"),
+    ADDFACT("Добавить факт"),
 
     EXHIBITIONSNOW("Какие сейчас проводятся автомобильные выставки?"),
     FACT("Расскажи какой-нибудь факт!"),

@@ -8,7 +8,7 @@ public interface SendBotMessageService {
 
     void prepareAndSendMessage(long chatId, String textToSend);
 
-    void sendMessageWithKeyboard(long chatId, String chatUserName, String message);
+    void sendMessageWithKeyboard(long chatId, long chatUserId, String message);
 
     void sendPhoto(long chatId);
 
@@ -20,7 +20,7 @@ public interface SendBotMessageService {
 
     void sendCallBackMessageShow(long callBackChatId, String callBackCommand, HashMap<String, Long> showDescription);
 
-    void messageToCallBack(long callBackChatId, String callBackCommand, String callBackText);
+    void messageToCallBack(long callBackChatId, String callBackCommand);
 
     void messageAboutShow(long chatId, long showId, String text);
 }

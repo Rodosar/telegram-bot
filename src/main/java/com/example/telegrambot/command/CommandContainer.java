@@ -1,5 +1,6 @@
 package com.example.telegrambot.command;
 
+import com.example.telegrambot.command.AdminCommand.AddFactCommand;
 import com.example.telegrambot.command.AutoShow.AddShowCommand;
 import com.example.telegrambot.command.UserCommand.CallBackMoreInfoCommand;
 import com.example.telegrambot.command.UserCommand.ExhibitionsNowCommand;
@@ -31,37 +32,58 @@ public class CommandContainer {
 
     private SendBotMessageService sendBotMessageService;
 
-    private HashMap<String, Command> adminCommandMap = new HashMap();
-    private HashMap<String, Command> userCommandMap = new HashMap();
+    private HashMap<String, Command> adminCommandMap = new HashMap<>();
+    private HashMap<String, Command> adminCommandMapWithCallback = new HashMap<>();
+    private HashMap<String, Command> userCommandMap = new HashMap<>();
+    private HashMap<String, Command> userCommandMapWithCallback = new HashMap<>();
+    private HashMap<Boolean, String> waitCommand = new HashMap<>();
 
-    public void fillMap(SendBotMessageService sendBotMessageService, UserRepository userRepository, AutoShowsRepository autoShowsRepository, FactsRepository factsRepository){
+    final static boolean isWaitCommand = true;
+
+    public void fillMap(SendBotMessageService sendBotMessageService, UserRepository userRepository,
+                        AutoShowsRepository autoShowsRepository, FactsRepository factsRepository){
 
         adminCommandMap.put(START.getCommandName(),new StartCommand(sendBotMessageService, userRepository));
         adminCommandMap.put(HELP.getCommandName(), new HelpCommand(sendBotMessageService));
-        adminCommandMap.put(SEND.getCommandName(), new SendCommand(sendBotMessageService, userRepository));
-        adminCommandMap.put(ADDSHOW.getCommandName(), new AddShowCommand(sendBotMessageService,autoShowsRepository));
+        adminCommandMapWithCallback.put(SEND.getCommandName(), new SendCommand(sendBotMessageService, userRepository));
+        adminCommandMapWithCallback.put(ADDSHOW.getCommandName(), new AddShowCommand(sendBotMessageService,autoShowsRepository));
+        adminCommandMapWithCallback.put(ADDFACT.getCommandName(), new AddFactCommand(sendBotMessageService, factsRepository));
 
         userCommandMap.put(START.getCommandName(),new StartCommand(sendBotMessageService, userRepository));
         userCommandMap.put(HELP.getCommandName(), new HelpCommand(sendBotMessageService));
         userCommandMap.put(EXHIBITIONSNOW.getCommandName(),new ExhibitionsNowCommand(sendBotMessageService, autoShowsRepository));
         userCommandMap.put(FACT.getCommandName(), new InterestingFacts(sendBotMessageService, factsRepository));
-        userCommandMap.put(MOREINFO.getCommandName(), new MoreInfoCommand(sendBotMessageService, autoShowsRepository));
+        userCommandMapWithCallback.put(MOREINFO.getCommandName(), new MoreInfoCommand(sendBotMessageService, autoShowsRepository));
 
         unknownCommand = new UnknownCommand(sendBotMessageService);
 
         this.autoShowsRepository = autoShowsRepository;
-        this.sendBotMessageService =sendBotMessageService;
+        this.sendBotMessageService = sendBotMessageService;
     }
 
-    public Command findCommand(String chatUserName, String commandIdentifier) {
+    public Command findCommand(long userId, String command) {
 
         Command commandOrDefault;
 
-        if(isAdmin.checkAdmin(chatUserName)){
-            commandOrDefault = adminCommandMap.getOrDefault(commandIdentifier, unknownCommand);
-        } else {
-            commandOrDefault = userCommandMap.getOrDefault(commandIdentifier, unknownCommand);
+        commandOrDefault = userCommandMap.getOrDefault(command, unknownCommand);
+
+        if(isAdmin.checkAdmin(userId)){
+            if(adminCommandMap.containsKey(command)){
+                waitCommand.put(isWaitCommand, command);
+                sendBotMessageService.messageToCallBack(userId, command);
+            }
+            else if(!waitCommand.isEmpty()){
+                String commandFromMap = waitCommand.get(isWaitCommand);
+                commandOrDefault = adminCommandMap.getOrDefault(commandFromMap, unknownCommand);
+                waitCommand.clear();
+            }
         }
+
+        /*if(isAdmin.checkAdmin(userId)){
+            commandOrDefault = adminCommandMap.getOrDefault(command, unknownCommand);
+        } else {
+            commandOrDefault = userCommandMap.getOrDefault(command, unknownCommand);
+        }*/
 
         return commandOrDefault;
     }
@@ -82,11 +104,11 @@ public class CommandContainer {
         return showCommand;
     }
 
-    public boolean findCallBackCommand(String chatUserName, String callBackCommand) {
+    public boolean isCommandExist(long userId, String callBackCommand) {
 
         boolean command = false;
 
-        if(isAdmin.checkAdmin(chatUserName)){
+        if(isAdmin.checkAdmin(userId)){
             command = adminCommandMap.containsKey(callBackCommand);
         } else {
             command = userCommandMap.containsKey(callBackCommand);

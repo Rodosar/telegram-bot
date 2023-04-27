@@ -35,17 +35,19 @@ public class StartCommand implements Command {
         long chatId = update.getMessage().getChatId();
         String chatUserName = update.getMessage().getChat().getUserName();
         String firstName = update.getMessage().getChat().getFirstName();
+        long userId = update.getMessage().getChat().getId();
         Message message = update.getMessage();
 
         registerUser(chatId, message);
-        startCommandReceived(chatId, chatUserName, firstName);
+        //startCommandReceived(chatId, chatUserName, firstName);
+        startCommandReceived(chatId, userId, firstName);
     }
 
-    private void startCommandReceived(long chatId, String chatUserName, String firstName){          //действия при нажатии /start
+    private void startCommandReceived(long chatId, long userId, String firstName){          //действия при нажатии /start
         String textToSend = "Hi " + firstName + "!";
         log.info("Replied to user " + firstName);
 
-        sendBotMessageService.sendMessageWithKeyboard(chatId, chatUserName, textToSend);
+        sendBotMessageService.sendMessageWithKeyboard(chatId, userId, textToSend);
     }
 
     private void registerUser(long chatId, Message message){                     //регистрация пользователя

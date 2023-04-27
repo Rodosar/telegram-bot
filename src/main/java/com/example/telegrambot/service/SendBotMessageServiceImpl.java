@@ -56,7 +56,7 @@ public class SendBotMessageServiceImpl implements SendBotMessageService{
         }
     }
 
-    public void sendMessageWithKeyboard(long chatId, String chatUserName, String textToSend) {  //отправка сообщения при старте с клавиатурой
+    public void sendMessageWithKeyboard(long chatId, long chatUserId, String textToSend) {  //отправка сообщения при старте с клавиатурой
         SendMessage message = new SendMessage();
         message.setChatId(String.valueOf(chatId));
         message.setText(textToSend);
@@ -65,12 +65,13 @@ public class SendBotMessageServiceImpl implements SendBotMessageService{
         List<KeyboardRow> keyboardRows = new ArrayList<>();
         KeyboardRow row = new KeyboardRow();
         KeyboardRow row2 = new KeyboardRow();
-        if(isAdmin.checkAdmin(chatUserName)){
+        if(isAdmin.checkAdmin(chatUserId)){
+            row.add("Меню пользователя");
             row.add("Добавить автовыставку");
             row.add("Редактировать автовыставку");
-            row.add("Отправить сообщение пользователям");
+            row2.add("Отправить сообщение пользователям");
             row2.add("Какие сейчас проводятся автомобильные выставки?");
-            row2.add("Расскажи какой-нибудь факт!");
+            row2.add("Добавить факт");
 
             keyboardRows.add(row);
             keyboardRows.add(row2);
@@ -203,7 +204,7 @@ public class SendBotMessageServiceImpl implements SendBotMessageService{
     }
 
     @Override
-    public void messageToCallBack(long callBackChatId, String callBackCommand, String callBackText) {
+    public void messageToCallBack(long callBackChatId, String callBackCommand) { //поменять название
 
         String textToSend = null;
 
@@ -215,6 +216,10 @@ public class SendBotMessageServiceImpl implements SendBotMessageService{
 
             case ("/send"):
                 textToSend = "Введите уведомление для всех пользователей!";
+                break;
+
+            case ("Добавить факт"):
+                textToSend = "Введите сперва заголовок, а затем сам факт";
                 break;
 
             default:

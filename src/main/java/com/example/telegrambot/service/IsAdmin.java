@@ -10,9 +10,9 @@ public class IsAdmin {
     @Autowired
     private BotConfig config;
 
-    public Boolean checkAdmin(String chatUserName){
+    public Boolean checkAdmin(long userId){
 
-        if(chatUserName.equals(config.getAdminUserName())){
+        if(userId == config.getAdminId()){
             return true;
         }
         return false;
